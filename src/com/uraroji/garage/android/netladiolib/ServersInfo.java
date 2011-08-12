@@ -34,115 +34,115 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * ƒT[ƒoî•ñˆê——
+ * ã‚µãƒ¼ãƒæƒ…å ±ä¸€è¦§
  */
 public class ServersInfo {
 
 	/**
-	 * ‚Ë‚Æ‚ç‚¶‚ÌƒT[ƒoî•ñ‚ÌURL
+	 * ã­ã¨ã‚‰ã˜ã®ã‚µãƒ¼ãƒæƒ…å ±ã®URL
 	 */
 	private static final String NETLADIO_SERVER_DAT_URL = "http://yp.ladio.net/stats/server.dat";
 
 	/**
-	 * ƒT[ƒoî•ñ‚Ìì¬
+	 * ã‚µãƒ¼ãƒæƒ…å ±ã®ä½œæˆæ™‚åˆ»
 	 */
 	private Date mDate;
 
 	/**
-	 * •s–¾‚È‘Sƒ\[ƒXƒRƒlƒNƒVƒ‡ƒ“”
+	 * ä¸æ˜ãªå…¨ã‚½ãƒ¼ã‚¹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°
 	 */
 	public static final int UNKNOWN_SOURCE = -1;
 
 	/**
-	 * ‘Sƒ\[ƒXƒRƒlƒNƒVƒ‡ƒ“”(”Ô‘g”)
+	 * å…¨ã‚½ãƒ¼ã‚¹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ç•ªçµ„æ•°)
 	 */
 	private int mSource = UNKNOWN_SOURCE;
 
 	/**
-	 * •s–¾‚È‘SƒNƒ‰ƒCƒAƒ“ƒgƒRƒlƒNƒVƒ‡ƒ“”
+	 * ä¸æ˜ãªå…¨ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°
 	 */
 	public static final int UNKNOWN_CLIENT = -1;
 
 	/**
-	 * ‘SƒNƒ‰ƒCƒAƒ“ƒgƒRƒlƒNƒVƒ‡ƒ“”(ƒŠƒXƒi[”)
+	 * å…¨ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ãƒªã‚¹ãƒŠãƒ¼æ•°)
 	 */
 	private int mClient = UNKNOWN_CLIENT;
 
 	/**
-	 * •s–¾‚È‘S“]‘—ƒf[ƒ^—Ê
+	 * ä¸æ˜ãªå…¨è»¢é€ãƒ‡ãƒ¼ã‚¿é‡
 	 */
 	public static final int UNKNOWN_TRANSFER = -1;
 
 	/**
-	 * ‘S“]‘—ƒf[ƒ^—Ê(Out‘¤) kbps
+	 * å…¨è»¢é€ãƒ‡ãƒ¼ã‚¿é‡(Outå´) kbps
 	 */
 	private int mTransfer = UNKNOWN_TRANSFER;
 
 	/**
-	 * ƒXƒgƒŠ[ƒ~ƒ“ƒOƒT[ƒoÚ‘±ƒpƒXƒ[ƒh
+	 * ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°ã‚µãƒ¼ãƒæ¥ç¶šãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 	 */
 	private String mPassword;
 
 	/**
-	 * ƒT[ƒoî•ñƒŠƒXƒg
+	 * ã‚µãƒ¼ãƒæƒ…å ±ãƒªã‚¹ãƒˆ
 	 */
 	private ArrayList<Server> mServerList = new ArrayList<Server>();
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 */
 	public ServersInfo() {
 	}
 
 	/**
-	 * ƒT[ƒoî•ñ‚Ìì¬‚ğæ“¾‚·‚é
+	 * ã‚µãƒ¼ãƒæƒ…å ±ã®ä½œæˆæ™‚åˆ»ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒT[ƒoî•ñ‚Ìì¬
+	 * @return ã‚µãƒ¼ãƒæƒ…å ±ã®ä½œæˆæ™‚åˆ»
 	 */
 	public final Date getDate() {
 		return mDate;
 	}
 
 	/**
-	 * ‘Sƒ\[ƒXƒRƒlƒNƒVƒ‡ƒ“”(”Ô‘g”)‚ğæ“¾‚·‚é
+	 * å…¨ã‚½ãƒ¼ã‚¹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ç•ªçµ„æ•°)ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ‘Sƒ\[ƒXƒRƒlƒNƒVƒ‡ƒ“”(”Ô‘g”)
+	 * @return å…¨ã‚½ãƒ¼ã‚¹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ç•ªçµ„æ•°)
 	 */
 	public final int getSource() {
 		return mSource;
 	}
 
 	/**
-	 * ‘SƒNƒ‰ƒCƒAƒ“ƒgƒRƒlƒNƒVƒ‡ƒ“”(ƒŠƒXƒi[”)‚ğæ“¾‚·‚é
+	 * å…¨ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ãƒªã‚¹ãƒŠãƒ¼æ•°)ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ‘SƒNƒ‰ƒCƒAƒ“ƒgƒRƒlƒNƒVƒ‡ƒ“”(ƒŠƒXƒi[”)
+	 * @return å…¨ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ãƒªã‚¹ãƒŠãƒ¼æ•°)
 	 */
 	public final int getClient() {
 		return mClient;
 	}
 
 	/**
-	 * ‘S“]‘—ƒf[ƒ^—Ê(Out‘¤)‚ğæ“¾‚·‚é
+	 * å…¨è»¢é€ãƒ‡ãƒ¼ã‚¿é‡(Outå´)ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ‘S“]‘—ƒf[ƒ^—Ê(Out‘¤)
+	 * @return å…¨è»¢é€ãƒ‡ãƒ¼ã‚¿é‡(Outå´)
 	 */
 	public final int getTransfer() {
 		return mTransfer;
 	}
 
 	/**
-	 * ƒXƒgƒŠ[ƒ~ƒ“ƒOƒT[ƒoÚ‘±ƒpƒXƒ[ƒh‚ğæ“¾‚·‚é
+	 * ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°ã‚µãƒ¼ãƒæ¥ç¶šãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒXƒgƒŠ[ƒ~ƒ“ƒOƒT[ƒoÚ‘±ƒpƒXƒ[ƒh
+	 * @return ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°ã‚µãƒ¼ãƒæ¥ç¶šãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 	 */
 	public final String getPassword() {
 		return mPassword;
 	}
 
 	/**
-	 * ƒT[ƒoî•ñƒŠƒXƒg‚ğæ“¾‚·‚é
+	 * ã‚µãƒ¼ãƒæƒ…å ±ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒT[ƒoî•ñƒŠƒXƒg
+	 * @return ã‚µãƒ¼ãƒæƒ…å ±ãƒªã‚¹ãƒˆ
 	 */
 	public final Server[] getServers() {
 		synchronized (this) {
@@ -151,11 +151,11 @@ public class ServersInfo {
 	}
 	
 	/**
-	 * w’è‚µ‚½ƒAƒhƒŒƒX‚ÌƒT[ƒo‚ğæ“¾‚·‚é
+	 * æŒ‡å®šã—ãŸã‚¢ãƒ‰ãƒ¬ã‚¹ã®ã‚µãƒ¼ãƒã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @param server
-	 *            ƒT[ƒoƒAƒhƒŒƒX
-	 * @return ƒT[ƒo
+	 *            ã‚µãƒ¼ãƒã‚¢ãƒ‰ãƒ¬ã‚¹
+	 * @return ã‚µãƒ¼ãƒ
 	 */
 	public final Server getServer(String server)
 	{
@@ -180,9 +180,9 @@ public class ServersInfo {
 	}
 	
 	/**
-	 * ‹ó‚¢‚Ä‚¢‚éƒT[ƒo‚ğæ“¾‚·‚é
+	 * ç©ºã„ã¦ã„ã‚‹ã‚µãƒ¼ãƒã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ‹ó‚¢‚Ä‚¢‚éƒT[ƒo
+	 * @return ç©ºã„ã¦ã„ã‚‹ã‚µãƒ¼ãƒ
 	 */
 	public final Server getVacantServer() {
 		Server result = null;
@@ -203,22 +203,22 @@ public class ServersInfo {
 	}
 	
 	/**
-	 * ƒT[ƒo‚©‚çæ“¾‚³‚ê‚é‚ÌŒ`®
+	 * ã‚µãƒ¼ãƒã‹ã‚‰å–å¾—ã•ã‚Œã‚‹æ™‚åˆ»ã®å½¢å¼
 	 */
 	private final static SimpleDateFormat SDF = new SimpleDateFormat(
 			"yyyy-MM-dd HH:mm:ss");
 
 	/**
-	 * ƒT[ƒo‚Ìˆê——‚ğƒCƒ“ƒ^[ƒlƒbƒg‚©‚çæ“¾‚·‚é
+	 * ã‚µãƒ¼ãƒã®ä¸€è¦§ã‚’ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆã‹ã‚‰å–å¾—ã™ã‚‹
 	 * 
-	 * ƒCƒ“ƒ^[ƒlƒbƒg‚©‚ç‚Ë‚Æ‚ç‚¶ƒT[ƒoˆê——‚ğæ“¾‚µA ServerInfoƒNƒ‰ƒX‚ª•Û‚·‚é”Ô‘g‚ğXV‚·‚é
+	 * ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆã‹ã‚‰ã­ã¨ã‚‰ã˜ã‚µãƒ¼ãƒä¸€è¦§ã‚’å–å¾—ã—ã€ ServerInfoã‚¯ãƒ©ã‚¹ãŒä¿æŒã™ã‚‹ç•ªçµ„ã‚’æ›´æ–°ã™ã‚‹
 	 * 
 	 * @throws IOException
-	 *             Ú‘±‚É¸”s‚µ‚½‚Æv‚í‚ê‚éê‡
+	 *             æ¥ç¶šã«å¤±æ•—ã—ãŸã¨æ€ã‚ã‚Œã‚‹å ´åˆ
 	 */
 	public void fetchServerInfo() throws IOException {
 		synchronized (this) {
-			// •Û‚µ‚Ä‚¢‚éƒT[ƒo‚ğ‚¢‚Á‚½‚ñƒNƒŠƒA‚·‚é
+			// ä¿æŒã—ã¦ã„ã‚‹ã‚µãƒ¼ãƒã‚’ã„ã£ãŸã‚“ã‚¯ãƒªã‚¢ã™ã‚‹
 			mServerList.clear();
 
 			HttpURLConnection httpConnection = null;
@@ -227,7 +227,7 @@ public class ServersInfo {
 			BufferedReader br = null;
 
 			try {
-				// ƒlƒbƒgƒ[ƒN‚©‚çƒT[ƒoî•ñ‚ğæ“¾‚·‚é
+				// ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ã‹ã‚‰ã‚µãƒ¼ãƒæƒ…å ±ã‚’å–å¾—ã™ã‚‹
 				final URL url = new URL(NETLADIO_SERVER_DAT_URL);
 				httpConnection = (HttpURLConnection) url.openConnection();
 				httpConnection.setRequestMethod("GET");
@@ -236,12 +236,12 @@ public class ServersInfo {
 				sr = new InputStreamReader(st, "Shift_JIS");
 				br = new BufferedReader(sr);
 
-				// ‰ğÍ
+				// è§£æ
 				String line;
-				boolean header = true; // ƒwƒbƒ_‚©
+				boolean header = true; // ãƒ˜ãƒƒãƒ€ã‹
 				while ((line = br.readLine()) != null) {
 					if (line.length() == 0) {
-						// ‹ós‚ª‚ ‚Á‚½‚çƒwƒbƒ_I—¹
+						// ç©ºè¡ŒãŒã‚ã£ãŸã‚‰ãƒ˜ãƒƒãƒ€çµ‚äº†
 						header = false;
 					} else if (header) {
 						String[] sDate = line.split("Date: ");

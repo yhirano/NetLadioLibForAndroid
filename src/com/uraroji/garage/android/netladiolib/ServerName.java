@@ -25,32 +25,32 @@ package com.uraroji.garage.android.netladiolib;
 import java.security.InvalidParameterException;
 
 /**
- * ƒT[ƒo–¼
+ * ã‚µãƒ¼ãƒå
  */
 public class ServerName {
 
 	/**
-	 * ƒT[ƒo–¼
+	 * ã‚µãƒ¼ãƒå
 	 */
 	private String mName;
 
 	/**
-	 * •s–¾‚Èƒ|[ƒg”Ô†
+	 * ä¸æ˜ãªãƒãƒ¼ãƒˆç•ªå·
 	 */
 	public static final int UNKNOWN_PORT = -1;
 
 	/**
-	 * ƒ|[ƒg”Ô†
+	 * ãƒãƒ¼ãƒˆç•ªå·
 	 */
 	private int mPort = UNKNOWN_PORT;
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * 
 	 * @param serverName
-	 *            ƒT[ƒo–¼Bxxx.com:8080‚Ì‚æ‚¤‚ÈƒT[ƒo–¼‚ÆIP‚ª‘g‚İ‡‚Á‚½•¶š—ñ‚ğw’è‚·‚é‚±‚ÆB
+	 *            ã‚µãƒ¼ãƒåã€‚xxx.com:8080ã®ã‚ˆã†ãªã‚µãƒ¼ãƒåã¨IPãŒçµ„ã¿åˆã£ãŸæ–‡å­—åˆ—ã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã€‚
 	 * @throws InvalidParameterException
-	 *             xxx.com:8080‚ÌŒ`®‚É‰ˆ‚Á‚Ä‚¢‚È‚¢ƒT[ƒo–¼‚ªw’è‚³‚ê‚½B
+	 *             xxx.com:8080ã®å½¢å¼ã«æ²¿ã£ã¦ã„ãªã„ã‚µãƒ¼ãƒåãŒæŒ‡å®šã•ã‚ŒãŸã€‚
 	 */
 	/*package*/ ServerName(String serverName) {
 		String[] token = serverName.split(":");
@@ -72,28 +72,28 @@ public class ServerName {
 	}
 
 	/**
-	 * ƒT[ƒo–¼‚ğæ“¾‚·‚é
+	 * ã‚µãƒ¼ãƒåã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒT[ƒo–¼
+	 * @return ã‚µãƒ¼ãƒå
 	 */
 	public final String getName() {
 		return mName;
 	}
 
 	/**
-	 * ƒ|[ƒg”Ô†‚ğæ“¾‚·‚é
+	 * ãƒãƒ¼ãƒˆç•ªå·ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒ|[ƒg”Ô†
+	 * @return ãƒãƒ¼ãƒˆç•ªå·
 	 */
 	public final int getPort() {
 		return mPort;
 	}
 	
 	/**
-	 * ƒT[ƒo–¼‚ğ•¶š—ñ‚Æ‚µ‚Ä•Ô‚·B<br />
-	 * xxx.com:8080‚ÌŒ`®‚É‰ˆ‚¤B
+	 * ã‚µãƒ¼ãƒåã‚’æ–‡å­—åˆ—ã¨ã—ã¦è¿”ã™ã€‚<br />
+	 * xxx.com:8080ã®å½¢å¼ã«æ²¿ã†ã€‚
 	 * 
-	 * @return •¶š—ñ‚Æ‚µ‚Ä‚ÌƒT[ƒo–¼
+	 * @return æ–‡å­—åˆ—ã¨ã—ã¦ã®ã‚µãƒ¼ãƒå
 	 */
 	/*package*/ String asString() {
 		return mName + ":" + String.valueOf(mPort);

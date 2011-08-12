@@ -32,54 +32,54 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * ”Ô‘g
+ * ç•ªçµ„
  */
 public class Channel implements Serializable {
 
 	private static final long serialVersionUID = -4184226934079774358L;
 
 	/**
-	 * ”Ô‘g‚ÌÚ×“à—e‚ğ•\¦‚·‚éƒTƒCƒg‚ÌURL
+	 * ç•ªçµ„ã®è©³ç´°å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹ã‚µã‚¤ãƒˆã®URL
 	 */
 	private URL mSurl;
 
 	/**
-	 * •ú‘—ŠJn
+	 * æ”¾é€é–‹å§‹æ™‚åˆ»
 	 */
 	private Date mTims;
 
 	/**
-	 * ”zMƒT[ƒoƒzƒXƒg–¼
+	 * é…ä¿¡ã‚µãƒ¼ãƒãƒ›ã‚¹ãƒˆå
 	 */
 	private String mSrv;
 
 	/**
-	 * ”zMƒT[ƒoƒ|[ƒg”Ô†
+	 * é…ä¿¡ã‚µãƒ¼ãƒãƒãƒ¼ãƒˆç•ªå·
 	 */
 	private int mPrt;
 
 	/**
-	 * ”zMƒT[ƒoƒ}ƒEƒ“ƒg
+	 * é…ä¿¡ã‚µãƒ¼ãƒãƒã‚¦ãƒ³ãƒˆ
 	 */
 	private String mMnt;
 
 	/**
-	 * ”zMƒtƒH[ƒ}ƒbƒg‚Ìí—Ş
+	 * é…ä¿¡ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ç¨®é¡
 	 */
 	private String mType;
 
 	/**
-	 * ƒ^ƒCƒgƒ‹
+	 * ã‚¿ã‚¤ãƒˆãƒ«
 	 */
 	private String mNam;
 
 	/**
-	 * ƒWƒƒƒ“ƒ‹
+	 * ã‚¸ãƒ£ãƒ³ãƒ«
 	 */
 	private String mGnl;
 
 	/**
-	 * •ú‘—“à—e
+	 * æ”¾é€å†…å®¹
 	 */
 	private String mDesc;
 
@@ -89,79 +89,79 @@ public class Channel implements Serializable {
 	private String mDj;
 
 	/**
-	 * Œ»İ‚Ì‹È–¼î•ñ
+	 * ç¾åœ¨ã®æ›²åæƒ…å ±
 	 */
 	private String mSong;
 
 	/**
-	 * WebƒTƒCƒg‚ÌURL
+	 * Webã‚µã‚¤ãƒˆã®URL
 	 */
 	private URL mUrl;
 
 	/**
-	 * ƒŠƒXƒi”‚ª•s–¾
+	 * ãƒªã‚¹ãƒŠæ•°ãŒä¸æ˜
 	 */
 	public transient static final int UNKNOWN_LISTENER_NUM = -1;
 
 	/**
-	 * Œ»ƒŠƒXƒi”
+	 * ç¾ãƒªã‚¹ãƒŠæ•°
 	 */
 	private int mCln = UNKNOWN_LISTENER_NUM;
 
 	/**
-	 * ‘ƒŠƒXƒi”
+	 * ç·ãƒªã‚¹ãƒŠæ•°
 	 */
 	private int mClns = UNKNOWN_LISTENER_NUM;
 
 	/**
-	 * Å‘åƒŠƒXƒi”
+	 * æœ€å¤§ãƒªã‚¹ãƒŠæ•°
 	 */
 	private int mMax = UNKNOWN_LISTENER_NUM;
 
 	/**
-	 * ƒrƒbƒgƒŒ[ƒg‚ª•s–¾
+	 * ãƒ“ãƒƒãƒˆãƒ¬ãƒ¼ãƒˆãŒä¸æ˜
 	 */
 	public transient static final int UNKNOWN_BITRATE_NUM = -1;
 
 	/**
-	 * ƒrƒbƒgƒŒ[ƒgiKbpsj
+	 * ãƒ“ãƒƒãƒˆãƒ¬ãƒ¼ãƒˆï¼ˆKbpsï¼‰
 	 */
 	private int mBit = UNKNOWN_BITRATE_NUM;
 
 	/**
-	 * ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ª•s–¾
+	 * ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆãŒä¸æ˜
 	 */
 	public transient static final int UNKNOWN_SAMPLING_RATE_NUM = -1;
 
 	/**
-	 * ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg
+	 * ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆ
 	 */
 	private int mSmpl = UNKNOWN_SAMPLING_RATE_NUM;
 
 	/**
-	 * ƒ`ƒƒƒ“ƒlƒ‹”‚ª•s–¾
+	 * ãƒãƒ£ãƒ³ãƒãƒ«æ•°ãŒä¸æ˜
 	 */
 	public transient static final int UNKNOWN_CHANNEL_NUM = -1;
 
 	/**
-	 * ƒ`ƒƒƒ“ƒlƒ‹”
+	 * ãƒãƒ£ãƒ³ãƒãƒ«æ•°
 	 */
 	private int mChs = UNKNOWN_CHANNEL_NUM;
 
 	/**
-	 * •ú‘—URL‚ÌƒLƒƒƒbƒVƒ…
+	 * æ”¾é€URLã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥
 	 * 
-	 * •ú‘—URL‚ğˆê“x¶¬‚µ‚½‚ç‚»‚ê‚ğƒLƒƒƒbƒVƒ…‚·‚é‚½‚ß‚É—pˆÓ
+	 * æ”¾é€URLã‚’ä¸€åº¦ç”Ÿæˆã—ãŸã‚‰ãã‚Œã‚’ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã™ã‚‹ãŸã‚ã«ç”¨æ„
 	 */
 	private transient URL mPlayUrlCache;
 
 	/**
-	 * •ú‘—URL‚ÌƒLƒƒƒbƒVƒ…‚ª—LŒø‚©
+	 * æ”¾é€URLã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥ãŒæœ‰åŠ¹ã‹
 	 */
 	private transient boolean mIsCreatedPlayUrlCache = false;
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 */
 	/*package*/ Channel() {
 	}
@@ -178,55 +178,55 @@ public class Channel implements Serializable {
 	}
 
 	/**
-	 * ”Ô‘g‚ÌÚ×“à—e‚ğ•\¦‚·‚éƒTƒCƒg‚ÌURL‚ğæ“¾‚·‚é
+	 * ç•ªçµ„ã®è©³ç´°å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹ã‚µã‚¤ãƒˆã®URLã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ”Ô‘g‚ÌÚ×“à—e‚ğ•\¦‚·‚éƒTƒCƒg‚ÌURLBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 * @return ç•ªçµ„ã®è©³ç´°å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹ã‚µã‚¤ãƒˆã®URLã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	public final URL getSurl() {
 		return mSurl;
 	}
 
 	/**
-	 * ”Ô‘g‚ÌÚ×“à—e‚ğ•\¦‚·‚éƒTƒCƒg‚ÌURL‚ğİ’è‚·‚é
+	 * ç•ªçµ„ã®è©³ç´°å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹ã‚µã‚¤ãƒˆã®URLã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param surl
-	 *            ”Ô‘g‚ÌÚ×“à—e‚ğ•\¦‚·‚éƒTƒCƒg‚ÌURL
+	 *            ç•ªçµ„ã®è©³ç´°å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹ã‚µã‚¤ãƒˆã®URL
 	 */
 	/*package*/ final void setSurl(URL surl) {
 		this.mSurl = surl;
 	}
 
 	/**
-	 * ”Ô‘g‚ÌÚ×“à—e‚ğ•\¦‚·‚éƒTƒCƒg‚ÌURL‚ğİ’è‚·‚é
+	 * ç•ªçµ„ã®è©³ç´°å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹ã‚µã‚¤ãƒˆã®URLã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param surl
-	 *            ”Ô‘g‚ÌÚ×“à—e‚ğ•\¦‚·‚éƒTƒCƒg‚ÌURL
+	 *            ç•ªçµ„ã®è©³ç´°å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹ã‚µã‚¤ãƒˆã®URL
 	 * @throws MalformedURLException
-	 *             URL‚ª³‚µ‚­‚È‚¢ê‡
+	 *             URLãŒæ­£ã—ããªã„å ´åˆ
 	 */
 	/*package*/ final void setSurl(String surl) throws MalformedURLException {
 		this.mSurl = new URL(surl);
 	}
 
 	/**
-	 * •ú‘—ŠJn
+	 * æ”¾é€é–‹å§‹æ™‚åˆ»
 	 * 
-	 * @return •ú‘—ŠJnBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 * @return æ”¾é€é–‹å§‹æ™‚åˆ»ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	public final Date getTims() {
 		return mTims;
 	}
 
 	/**
-	 * ƒT[ƒo‚©‚çæ“¾‚³‚ê‚é•ú‘—ŠJn‚ÌŒ`®
+	 * ã‚µãƒ¼ãƒã‹ã‚‰å–å¾—ã•ã‚Œã‚‹æ”¾é€é–‹å§‹æ™‚åˆ»ã®å½¢å¼
 	 */
 	private transient final static SimpleDateFormat OUTPUT_SDF = new SimpleDateFormat(
 			"yyyy/MM/dd HH:mm:ss");
 
 	/**
-	 * •ú‘—ŠJn‚ğ•¶š—ñ‚Åæ“¾‚·‚é
+	 * æ”¾é€é–‹å§‹æ™‚åˆ»ã‚’æ–‡å­—åˆ—ã§å–å¾—ã™ã‚‹
 	 * 
-	 * @return •ú‘—ŠJn‚Ì•¶š—ñBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 * @return æ”¾é€é–‹å§‹æ™‚åˆ»ã®æ–‡å­—åˆ—ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	public String getTimsString() {
 		if (mTims == null) {
@@ -236,173 +236,173 @@ public class Channel implements Serializable {
 	}
 
 	/**
-	 * •ú‘—ŠJn‚ğİ’è‚·‚é
+	 * æ”¾é€é–‹å§‹æ™‚åˆ»ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param tims
-	 *            •ú‘—ŠJnBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 *            æ”¾é€é–‹å§‹æ™‚åˆ»ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	/*package*/ final void setTims(Date tims) {
 		this.mTims = tims;
 	}
 
 	/**
-	 * ƒT[ƒo‚©‚çæ“¾‚³‚ê‚é•ú‘—ŠJn‚ÌŒ`®
+	 * ã‚µãƒ¼ãƒã‹ã‚‰å–å¾—ã•ã‚Œã‚‹æ”¾é€é–‹å§‹æ™‚åˆ»ã®å½¢å¼
 	 */
 	private transient final static SimpleDateFormat INPUT_SDF = new SimpleDateFormat(
 			"yy/MM/dd HH:mm:ss");
 
 	/**
-	 * •ú‘—ŠJn‚ğ•¶š—ñ‚Åİ’è‚·‚é
+	 * æ”¾é€é–‹å§‹æ™‚åˆ»ã‚’æ–‡å­—åˆ—ã§è¨­å®šã™ã‚‹
 	 * 
-	 * "yy/MM/dd HH:mm:ss"‚ÌŒ`®‚Åİ’è‚·‚é•K—v‚ª‚ ‚é
+	 * "yy/MM/dd HH:mm:ss"ã®å½¢å¼ã§è¨­å®šã™ã‚‹å¿…è¦ãŒã‚ã‚‹
 	 * 
 	 * @param tims
-	 *            •ú‘—ŠJn‚Ì•¶š—ñ
+	 *            æ”¾é€é–‹å§‹æ™‚åˆ»ã®æ–‡å­—åˆ—
 	 * @throws ParseException
-	 *             •¶š—ñ‚ÌƒtƒH[ƒ}ƒbƒg‚ª³‚µ‚­‚È‚¢
+	 *             æ–‡å­—åˆ—ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãŒæ­£ã—ããªã„
 	 */
 	/*package*/ final void setTims(String tims) throws ParseException {
 		this.mTims = INPUT_SDF.parse(tims);
 	}
 
 	/**
-	 * ”zMƒT[ƒoƒzƒXƒg–¼‚ğİ’è‚·‚é
+	 * é…ä¿¡ã‚µãƒ¼ãƒãƒ›ã‚¹ãƒˆåã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param srv
-	 *            ”zMƒT[ƒoƒzƒXƒg–¼
+	 *            é…ä¿¡ã‚µãƒ¼ãƒãƒ›ã‚¹ãƒˆå
 	 */
 	/*package*/ final void setSrv(String srv) {
 		this.mSrv = srv;
 
-		// •ú‘—URLƒLƒƒƒbƒVƒ…‚ğƒNƒŠƒA‚·‚é
+		// æ”¾é€URLã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 		mPlayUrlCache = null;
 		mIsCreatedPlayUrlCache = false;
 	}
 
 	/**
-	 * ”zMƒT[ƒoƒ|[ƒg”Ô†‚ğİ’è‚·‚é
+	 * é…ä¿¡ã‚µãƒ¼ãƒãƒãƒ¼ãƒˆç•ªå·ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param prt
-	 *            ”zMƒT[ƒoƒ|[ƒg”Ô†
+	 *            é…ä¿¡ã‚µãƒ¼ãƒãƒãƒ¼ãƒˆç•ªå·
 	 */
 	/*package*/ final void setPrt(int prt) {
 		this.mPrt = prt;
 
-		// •ú‘—URLƒLƒƒƒbƒVƒ…‚ğƒNƒŠƒA‚·‚é
+		// æ”¾é€URLã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 		mPlayUrlCache = null;
 		mIsCreatedPlayUrlCache = false;
 	}
 
 	/**
-	 * ”zMƒT[ƒoƒ}ƒEƒ“ƒg‚ğİ’è‚·‚é
+	 * é…ä¿¡ã‚µãƒ¼ãƒãƒã‚¦ãƒ³ãƒˆã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param mnt
-	 *            ”zMƒT[ƒoƒ}ƒEƒ“ƒg
+	 *            é…ä¿¡ã‚µãƒ¼ãƒãƒã‚¦ãƒ³ãƒˆ
 	 */
 	/*package*/ final void setMnt(String mnt) {
 		this.mMnt = mnt;
 
-		// •ú‘—URLƒLƒƒƒbƒVƒ…‚ğƒNƒŠƒA‚·‚é
+		// æ”¾é€URLã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 		mPlayUrlCache = null;
 		mIsCreatedPlayUrlCache = false;
 	}
 
 	/**
-	 * ”zMƒtƒH[ƒ}ƒbƒg‚Ìí—Ş‚ğæ“¾‚·‚é
+	 * é…ä¿¡ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ç¨®é¡ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ”zMƒtƒH[ƒ}ƒbƒg‚Ìí—ŞBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 * @return é…ä¿¡ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ç¨®é¡ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	public final String getType() {
 		return mType;
 	}
 
 	/**
-	 * ”zMƒtƒH[ƒ}ƒbƒg‚Ìí—Ş‚ğİ’è‚·‚é
+	 * é…ä¿¡ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ç¨®é¡ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param type
-	 *            ”zMƒtƒH[ƒ}ƒbƒg‚Ìí—Ş
+	 *            é…ä¿¡ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ç¨®é¡
 	 */
 	/*package*/ final void setType(String type) {
 		this.mType = type;
 	}
 
 	/**
-	 * ƒ^ƒCƒgƒ‹‚ğæ“¾‚·‚é
+	 * ã‚¿ã‚¤ãƒˆãƒ«ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒ^ƒCƒgƒ‹Bİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 * @return ã‚¿ã‚¤ãƒˆãƒ«ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	public final String getNam() {
 		return mNam;
 	}
 
 	/**
-	 * ƒ^ƒCƒgƒ‹‚ğİ’è‚·‚é
+	 * ã‚¿ã‚¤ãƒˆãƒ«ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param nam
-	 *            ƒ^ƒCƒgƒ‹
+	 *            ã‚¿ã‚¤ãƒˆãƒ«
 	 */
 	/*package*/ final void setNam(String nam) {
 		this.mNam = nam;
 
-		// isMatchŒ‹‰Ê‚ğ•Û‚·‚éƒLƒƒƒbƒVƒ…‚ğíœ
+		// isMatchçµæœã‚’ä¿æŒã™ã‚‹ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’å‰Šé™¤
 		mIsMatchCache.clear();
 	}
 
 	/**
-	 * ƒWƒƒƒ“ƒ‹‚ğæ“¾‚·‚é
+	 * ã‚¸ãƒ£ãƒ³ãƒ«ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒWƒƒƒ“ƒ‹Bİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 * @return ã‚¸ãƒ£ãƒ³ãƒ«ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	public final String getGnl() {
 		return mGnl;
 	}
 
 	/**
-	 * ƒWƒƒƒ“ƒ‹‚ğİ’è‚·‚é
+	 * ã‚¸ãƒ£ãƒ³ãƒ«ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param gnl
-	 *            ƒWƒƒƒ“ƒ‹
+	 *            ã‚¸ãƒ£ãƒ³ãƒ«
 	 */
 	/*package*/ final void setGnl(String gnl) {
 		this.mGnl = gnl;
 
-		// isMatchŒ‹‰Ê‚ğ•Û‚·‚éƒLƒƒƒbƒVƒ…‚ğíœ
+		// isMatchçµæœã‚’ä¿æŒã™ã‚‹ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’å‰Šé™¤
 		mIsMatchCache.clear();
 	}
 
 	/**
-	 * •ú‘—“à—e‚ğæ“¾‚·‚é
+	 * æ”¾é€å†…å®¹ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return •ú‘—“à—eBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 * @return æ”¾é€å†…å®¹ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	public final String getDesc() {
 		return mDesc;
 	}
 
 	/**
-	 * •ú‘—“à—e‚ğİ’è‚·‚é
+	 * æ”¾é€å†…å®¹ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param desc
-	 *            •ú‘—“à—e
+	 *            æ”¾é€å†…å®¹
 	 */
 	/*package*/ final void setDesc(String desc) {
 		this.mDesc = desc;
 
-		// isMatchŒ‹‰Ê‚ğ•Û‚·‚éƒLƒƒƒbƒVƒ…‚ğíœ
+		// isMatchçµæœã‚’ä¿æŒã™ã‚‹ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’å‰Šé™¤
 		mIsMatchCache.clear();
 	}
 
 	/**
-	 * DJ‚ğæ“¾‚·‚é
+	 * DJã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return DJBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 * @return DJã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	public final String getDj() {
 		return mDj;
 	}
 
 	/**
-	 * DJ‚ğİ’è‚·‚é
+	 * DJã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param dj
 	 *            DJ
@@ -410,64 +410,64 @@ public class Channel implements Serializable {
 	/*package*/ final void setDj(String dj) {
 		this.mDj = dj;
 
-		// isMatchŒ‹‰Ê‚ğ•Û‚·‚éƒLƒƒƒbƒVƒ…‚ğíœ
+		// isMatchçµæœã‚’ä¿æŒã™ã‚‹ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’å‰Šé™¤
 		mIsMatchCache.clear();
 	}
 
 	/**
-	 * Œ»İ‚Ì‹È–¼î•ñ‚ğæ“¾‚·‚é
+	 * ç¾åœ¨ã®æ›²åæƒ…å ±ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return Œ»İ‚Ì‹È–¼î•ñBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 * @return ç¾åœ¨ã®æ›²åæƒ…å ±ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	public final String getSong() {
 		return mSong;
 	}
 
 	/**
-	 * Œ»İ‚Ì‹È–¼î•ñ‚ğİ’è‚·‚é
+	 * ç¾åœ¨ã®æ›²åæƒ…å ±ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param song
-	 *            Œ»İ‚Ì‹È–¼î•ñ
+	 *            ç¾åœ¨ã®æ›²åæƒ…å ±
 	 */
 	/*package*/ final void setSong(String song) {
 		this.mSong = song;
 	}
 
 	/**
-	 * WebƒTƒCƒg‚ÌURL‚ğæ“¾‚·‚é
+	 * Webã‚µã‚¤ãƒˆã®URLã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return WebƒTƒCƒg‚ÌURLBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍnullB
+	 * @return Webã‚µã‚¤ãƒˆã®URLã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullã€‚
 	 */
 	public final URL getUrl() {
 		return mUrl;
 	}
 
 	/**
-	 * WebƒTƒCƒg‚ÌURL‚ğİ’è‚·‚é
+	 * Webã‚µã‚¤ãƒˆã®URLã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param url
-	 *            WebƒTƒCƒg‚ÌURL
+	 *            Webã‚µã‚¤ãƒˆã®URL
 	 */
 	/*package*/ final void setUrl(URL url) {
 		this.mUrl = url;
 	}
 
 	/**
-	 * WebƒTƒCƒg‚ÌURL‚ğ•¶š—ñ‚Åİ’è‚·‚é
+	 * Webã‚µã‚¤ãƒˆã®URLã‚’æ–‡å­—åˆ—ã§è¨­å®šã™ã‚‹
 	 * 
 	 * @param url
-	 *            WebƒTƒCƒg‚ÌURL
+	 *            Webã‚µã‚¤ãƒˆã®URL
 	 * @throws MalformedURLException
-	 *             URL‚ª³‚µ‚­‚È‚¢ê‡
+	 *             URLãŒæ­£ã—ããªã„å ´åˆ
 	 */
 	/*package*/ final void setUrl(String url) throws MalformedURLException {
 		this.mUrl = new URL(url);
 	}
 
 	/**
-	 * Œ»ƒŠƒXƒi”‚ğæ“¾‚·‚é
+	 * ç¾ãƒªã‚¹ãƒŠæ•°ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return Œ»ƒŠƒXƒi”Bİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍUNKNOWN_LISTENER_NUMB
+	 * @return ç¾ãƒªã‚¹ãƒŠæ•°ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯UNKNOWN_LISTENER_NUMã€‚
 	 * 
 	 * @see Channel#UNKNOWN_LISTENER_NUM
 	 */
@@ -476,19 +476,19 @@ public class Channel implements Serializable {
 	}
 
 	/**
-	 * Œ»ƒŠƒXƒi”‚ğİ’è‚·‚é
+	 * ç¾ãƒªã‚¹ãƒŠæ•°ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param cln
-	 *            Œ»ƒŠƒXƒi”B0–¢–‚ğİ’è‚µ‚½ê‡AUNKNOWN_LISTENER_NUM‚Æ‚È‚éB
+	 *            ç¾ãƒªã‚¹ãƒŠæ•°ã€‚0æœªæº€ã‚’è¨­å®šã—ãŸå ´åˆã€UNKNOWN_LISTENER_NUMã¨ãªã‚‹ã€‚
 	 */
 	/*package*/ final void setCln(int cln) {
 		this.mCln = (cln >= 0) ? cln : UNKNOWN_LISTENER_NUM;
 	}
 
 	/**
-	 * ‘ƒŠƒXƒi”‚ğæ“¾‚·‚é
+	 * ç·ãƒªã‚¹ãƒŠæ•°ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ‘ƒŠƒXƒi”Bİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍUNKNOWN_LISTENER_NUMB
+	 * @return ç·ãƒªã‚¹ãƒŠæ•°ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯UNKNOWN_LISTENER_NUMã€‚
 	 * 
 	 * @see Channel#UNKNOWN_LISTENER_NUM
 	 */
@@ -497,19 +497,19 @@ public class Channel implements Serializable {
 	}
 
 	/**
-	 * ‘ƒŠƒXƒi”‚ğİ’è‚·‚é
+	 * ç·ãƒªã‚¹ãƒŠæ•°ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param clns
-	 *            ‘ƒŠƒXƒi”B0–¢–‚ğİ’è‚µ‚½ê‡AUNKNOWN_LISTENER_NUM‚Æ‚È‚éB
+	 *            ç·ãƒªã‚¹ãƒŠæ•°ã€‚0æœªæº€ã‚’è¨­å®šã—ãŸå ´åˆã€UNKNOWN_LISTENER_NUMã¨ãªã‚‹ã€‚
 	 */
 	/*package*/ final void setClns(int clns) {
 		this.mClns = (clns >= 0) ? clns : UNKNOWN_LISTENER_NUM;
 	}
 
 	/**
-	 * Å‘åƒŠƒXƒi”‚ğæ“¾‚·‚é
+	 * æœ€å¤§ãƒªã‚¹ãƒŠæ•°ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return Å‘åƒŠƒXƒi”Bİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍUNKNOWN_LISTENER_NUMB
+	 * @return æœ€å¤§ãƒªã‚¹ãƒŠæ•°ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯UNKNOWN_LISTENER_NUMã€‚
 	 * 
 	 * @see Channel#UNKNOWN_LISTENER_NUM
 	 */
@@ -518,19 +518,19 @@ public class Channel implements Serializable {
 	}
 
 	/**
-	 * Å‘åƒŠƒXƒi”‚ğİ’è‚·‚é
+	 * æœ€å¤§ãƒªã‚¹ãƒŠæ•°ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param max
-	 *            Å‘åƒŠƒXƒi”B0–¢–‚ğİ’è‚µ‚½ê‡AUNKNOWN_LISTENER_NUM‚Æ‚È‚éB
+	 *            æœ€å¤§ãƒªã‚¹ãƒŠæ•°ã€‚0æœªæº€ã‚’è¨­å®šã—ãŸå ´åˆã€UNKNOWN_LISTENER_NUMã¨ãªã‚‹ã€‚
 	 */
 	/*package*/ final void setMax(int max) {
 		this.mMax = (max >= 0) ? max : UNKNOWN_LISTENER_NUM;
 	}
 
 	/**
-	 * ƒrƒbƒgƒŒ[ƒgiKbpsj‚ğæ“¾‚·‚é
+	 * ãƒ“ãƒƒãƒˆãƒ¬ãƒ¼ãƒˆï¼ˆKbpsï¼‰ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒrƒbƒgƒŒ[ƒgiKbpsjBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍUNKNOWN_BITRATE_NUMB
+	 * @return ãƒ“ãƒƒãƒˆãƒ¬ãƒ¼ãƒˆï¼ˆKbpsï¼‰ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯UNKNOWN_BITRATE_NUMã€‚
 	 * 
 	 * @see Channel#UNKNOWN_BITRATE_NUM
 	 */
@@ -539,19 +539,19 @@ public class Channel implements Serializable {
 	}
 
 	/**
-	 * ƒrƒbƒgƒŒ[ƒgiKbpsj‚ğİ’è‚·‚é
+	 * ãƒ“ãƒƒãƒˆãƒ¬ãƒ¼ãƒˆï¼ˆKbpsï¼‰ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param bit
-	 *            ƒrƒbƒgƒŒ[ƒgiKbpsjB0–¢–‚ğİ’è‚µ‚½ê‡AUNKNOWN_BITRATE_NUM‚Æ‚È‚éB
+	 *            ãƒ“ãƒƒãƒˆãƒ¬ãƒ¼ãƒˆï¼ˆKbpsï¼‰ã€‚0æœªæº€ã‚’è¨­å®šã—ãŸå ´åˆã€UNKNOWN_BITRATE_NUMã¨ãªã‚‹ã€‚
 	 */
 	/*package*/ final void setBit(int bit) {
 		this.mBit = (bit >= 0) ? bit : UNKNOWN_BITRATE_NUM;
 	}
 
 	/**
-	 * ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ğæ“¾‚·‚é
+	 * ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒgBİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍUNKNOWN_SAMPLING_RATE_NUMB
+	 * @return ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯UNKNOWN_SAMPLING_RATE_NUMã€‚
 	 * 
 	 * @see Channel#UNKNOWN_SAMPLING_RATE_NUM
 	 */
@@ -560,19 +560,19 @@ public class Channel implements Serializable {
 	}
 
 	/**
-	 * ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ğİ’è‚·‚é
+	 * ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param smpl
-	 *            ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒgB0–¢–‚ğİ’è‚µ‚½ê‡AUNKNOWN_SAMPLING_RATE_NUM‚Æ‚È‚éB
+	 *            ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã€‚0æœªæº€ã‚’è¨­å®šã—ãŸå ´åˆã€UNKNOWN_SAMPLING_RATE_NUMã¨ãªã‚‹ã€‚
 	 */
 	/*package*/ final void setSmpl(int smpl) {
 		this.mSmpl = (smpl >= 0) ? smpl : UNKNOWN_CHANNEL_NUM;
 	}
 
 	/**
-	 * ƒ`ƒƒƒ“ƒlƒ‹”‚ğæ“¾‚·‚é
+	 * ãƒãƒ£ãƒ³ãƒãƒ«æ•°ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒ`ƒƒƒ“ƒlƒ‹”Bİ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚ÍUNKNOWN_CHANNEL_NUMB
+	 * @return ãƒãƒ£ãƒ³ãƒãƒ«æ•°ã€‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯UNKNOWN_CHANNEL_NUMã€‚
 	 * 
 	 * @see Channel#UNKNOWN_SAMPLING_RATE_NUM
 	 */
@@ -581,9 +581,9 @@ public class Channel implements Serializable {
 	}
 
 	/**
-	 * ƒ`ƒƒƒ“ƒlƒ‹”‚ğ•¶š—ñ‚Åæ“¾‚·‚é
+	 * ãƒãƒ£ãƒ³ãƒãƒ«æ•°ã‚’æ–‡å­—åˆ—ã§å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒ`ƒƒƒ“ƒlƒ‹”‚Ì•¶š—ñ
+	 * @return ãƒãƒ£ãƒ³ãƒãƒ«æ•°ã®æ–‡å­—åˆ—
 	 */
 	public String getChsString() {
 		switch (mChs) {
@@ -599,21 +599,21 @@ public class Channel implements Serializable {
 	}
 
 	/**
-	 * ƒ`ƒƒƒ“ƒlƒ‹”‚ğİ’è‚·‚é
+	 * ãƒãƒ£ãƒ³ãƒãƒ«æ•°ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param chs
-	 *            ƒ`ƒƒƒ“ƒlƒ‹”B0–¢–‚ğİ’è‚µ‚½ê‡AUNKNOWN_CHANNEL_NUM‚Æ‚È‚éB
+	 *            ãƒãƒ£ãƒ³ãƒãƒ«æ•°ã€‚0æœªæº€ã‚’è¨­å®šã—ãŸå ´åˆã€UNKNOWN_CHANNEL_NUMã¨ãªã‚‹ã€‚
 	 */
 	/*package*/ final void setChs(int chs) {
 		this.mChs = (chs >= 0) ? chs : UNKNOWN_CHANNEL_NUM;
 	}
 
 	/**
-	 * ”Ô‘g‚Ì•ú‘—URL‚ğæ“¾‚·‚é
+	 * ç•ªçµ„ã®æ”¾é€URLã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * ”Ô‘g‚Ì•ú‘—URL‚ÍmSrvAmPrtAmMnt‚Ìã•û‚ğŒ³‚É¶¬‚·‚éB ‚±‚ê‚ç‚ª³‚µ‚­İ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚Ínull‚ª•Ô‚é‚Ì‚Å’ˆÓB
+	 * ç•ªçµ„ã®æ”¾é€URLã¯mSrvã€mPrtã€mMntã®ä¸Šæ–¹ã‚’å…ƒã«ç”Ÿæˆã™ã‚‹ã€‚ ã“ã‚Œã‚‰ãŒæ­£ã—ãè¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullãŒè¿”ã‚‹ã®ã§æ³¨æ„ã€‚
 	 * 
-	 * @return ”Ô‘g‚Ì•ú‘—URLB”Ô‘g‚Ì•ú‘—URL‚ª‘¶İ‚µ‚È‚¢ê‡‚ÍnullB
+	 * @return ç•ªçµ„ã®æ”¾é€URLã€‚ç•ªçµ„ã®æ”¾é€URLãŒå­˜åœ¨ã—ãªã„å ´åˆã¯nullã€‚
 	 */
 	public URL getPlayUrl() {
 		if (mIsCreatedPlayUrlCache == false) {
@@ -624,12 +624,12 @@ public class Channel implements Serializable {
 	}
 
 	/**
-	 * ”zMƒT[ƒoƒzƒXƒg–¼Eƒ|[ƒg”Ô†Eƒ}ƒEƒ“ƒg‚©‚çÄ¶URL‚ğ¶¬‚·‚é
+	 * é…ä¿¡ã‚µãƒ¼ãƒãƒ›ã‚¹ãƒˆåãƒ»ãƒãƒ¼ãƒˆç•ªå·ãƒ»ãƒã‚¦ãƒ³ãƒˆã‹ã‚‰å†ç”ŸURLã‚’ç”Ÿæˆã™ã‚‹
 	 * 
-	 * @param srv ”zMƒT[ƒoƒzƒXƒg–¼
-	 * @param prt ”zMƒT[ƒoƒ|[ƒg”Ô†
-	 * @param mnt ”zMƒT[ƒoƒ}ƒEƒ“ƒg
-	 * @return Ä¶URLB”zMƒT[ƒoƒzƒXƒg–¼Eƒ|[ƒg”Ô†Eƒ}ƒEƒ“ƒg‚Ì‚¢‚¸‚ê‚©‚ª•s³‚Èê‡‚ÍnullB
+	 * @param srv é…ä¿¡ã‚µãƒ¼ãƒãƒ›ã‚¹ãƒˆå
+	 * @param prt é…ä¿¡ã‚µãƒ¼ãƒãƒãƒ¼ãƒˆç•ªå·
+	 * @param mnt é…ä¿¡ã‚µãƒ¼ãƒãƒã‚¦ãƒ³ãƒˆ
+	 * @return å†ç”ŸURLã€‚é…ä¿¡ã‚µãƒ¼ãƒãƒ›ã‚¹ãƒˆåãƒ»ãƒãƒ¼ãƒˆç•ªå·ãƒ»ãƒã‚¦ãƒ³ãƒˆã®ã„ãšã‚Œã‹ãŒä¸æ­£ãªå ´åˆã¯nullã€‚
 	 */
 	public static URL createPlayUrl(String srv, int prt, String mnt) {
 		if (srv == null || srv.length() == 0 || prt < 0 || mnt == null
@@ -640,35 +640,35 @@ public class Channel implements Serializable {
 		try {
 			return new URL("http://" + srv + ":" + String.valueOf(prt) + mnt);
 		} catch (MalformedURLException e) {
-			// •ú‘—URL‚ª¶¬‚Å‚«‚È‚¢ê‡
+			// æ”¾é€URLãŒç”Ÿæˆã§ããªã„å ´åˆ
 			return null;
 		}
 	}
 	
 	/**
-	 * isMatch‚ÌŒŸõŒ‹‰Ê‚ğƒLƒƒƒbƒVƒ…‚µ‚Ä‚¨‚­‚½‚ß‚Ìƒ}ƒbƒv
+	 * isMatchã®æ¤œç´¢çµæœã‚’ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã—ã¦ãŠããŸã‚ã®ãƒãƒƒãƒ—
 	 * 
-	 * ƒƒ‚ƒŠ‚ª‘«‚è‚È‚¢ê‡‚âAChannel“à‚Ìî•ñ‚ğ‘‚«Š·‚¦‚½ê‡‚É‚Ínull‚É‚È‚éB
+	 * ãƒ¡ãƒ¢ãƒªãŒè¶³ã‚Šãªã„å ´åˆã‚„ã€Channelå†…ã®æƒ…å ±ã‚’æ›¸ãæ›ãˆãŸå ´åˆã«ã¯nullã«ãªã‚‹ã€‚
 	 */
 	private transient SoftReference<HashMap<String, Boolean>> mIsMatchCache = new SoftReference<HashMap<String, Boolean>>(
 			new HashMap<String, Boolean>());
 
 	/**
-	 * ‚±‚Ì”Ô‘g‚ªƒtƒBƒ‹ƒ^ƒŠƒ“ƒO’PŒê‚É‡’v‚·‚é‚©‚ğæ“¾‚·‚é
+	 * ã“ã®ç•ªçµ„ãŒãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°å˜èªã«åˆè‡´ã™ã‚‹ã‹ã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @param searchWord
-	 *            ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO’PŒêB ‚±‚±‚Åw’è‚µ‚½•¶š—ñ‚ğƒXƒy[ƒX‚É•ª‚©‚¿‘‚«‚µ‚½‚»‚ê‚¼‚ê‚Ì•¶š—ñ‚É‘Î‚µ‚ÄA
-	 *            ‚·‚×‚Ä‚É‡’v‚·‚é”Ô‘g‚Ì‚İtrue‚ğ•Ô‚·iANDŒŸõjB
-	 *            ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO’PŒê‚ğw’è‚µ‚È‚¢ê‡‚Í‹ó‚à‰¿‚©null‚ğw’è‚·‚é‚±‚ÆB
-	 * @return true‚Ìê‡‚ÍƒtƒBƒ‹ƒ^ƒŠƒ“ƒO’PŒê‚É‡’v‚·‚é”Ô‘g‚Å‚ ‚éB‚»‚êˆÈŠO‚ÍfalseB
+	 *            ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°å˜èªã€‚ ã“ã“ã§æŒ‡å®šã—ãŸæ–‡å­—åˆ—ã‚’ã‚¹ãƒšãƒ¼ã‚¹ã«åˆ†ã‹ã¡æ›¸ãã—ãŸãã‚Œãã‚Œã®æ–‡å­—åˆ—ã«å¯¾ã—ã¦ã€
+	 *            ã™ã¹ã¦ã«åˆè‡´ã™ã‚‹ç•ªçµ„ã®ã¿trueã‚’è¿”ã™ï¼ˆANDæ¤œç´¢ï¼‰ã€‚
+	 *            ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°å˜èªã‚’æŒ‡å®šã—ãªã„å ´åˆã¯ç©ºã‚‚æ™‚ä¾¡ã‹nullã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã€‚
+	 * @return trueã®å ´åˆã¯ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°å˜èªã«åˆè‡´ã™ã‚‹ç•ªçµ„ã§ã‚ã‚‹ã€‚ãã‚Œä»¥å¤–ã¯falseã€‚
 	 */
 	/*package*/ boolean isMatch(String searchWord) {
-		// ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO’PŒê‚ªw’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚Í–³ğŒ‚É‡’v‚·‚é
+		// ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°å˜èªãŒæŒ‡å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯ç„¡æ¡ä»¶ã«åˆè‡´ã™ã‚‹
 		if (searchWord == null || searchWord.length() == 0) {
 			return true;
 		}
 
-		// ƒLƒƒƒbƒVƒ…‚ÉŒŸõŒ‹‰Ê‚ª‚ ‚ê‚Î‚»‚ê‚ğQÆ‚·‚é
+		// ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã«æ¤œç´¢çµæœãŒã‚ã‚Œã°ãã‚Œã‚’å‚ç…§ã™ã‚‹
 		{
 			HashMap<String, Boolean> isMatchCacheRef = mIsMatchCache.get();
 			if (isMatchCacheRef != null) {
@@ -679,8 +679,8 @@ public class Channel implements Serializable {
 			}
 		}
 
-		// •¶š—ñ‚ğ‹ó”’•¶š‚Å•ªŠ„‚·‚é
-		String[] words = searchWord.split(" |\\t|@");
+		// æ–‡å­—åˆ—ã‚’ç©ºç™½æ–‡å­—ã§åˆ†å‰²ã™ã‚‹
+		String[] words = searchWord.split(" |\\t|ã€€");
 
 		boolean result = false;
 
@@ -728,7 +728,7 @@ public class Channel implements Serializable {
 			result = !misMatch;
 		}
 
-		// ƒLƒƒƒbƒVƒ…‚ÉŒŸõŒ‹‰Ê‚ğ•Û‘¶‚·‚é
+		// ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã«æ¤œç´¢çµæœã‚’ä¿å­˜ã™ã‚‹
 		{
 			if (mIsMatchCache == null || mIsMatchCache.get() == null) {
 				mIsMatchCache = new SoftReference<HashMap<String, Boolean>>(

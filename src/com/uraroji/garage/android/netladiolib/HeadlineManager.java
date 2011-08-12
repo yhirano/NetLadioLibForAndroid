@@ -23,25 +23,25 @@
 package com.uraroji.garage.android.netladiolib;
 
 /**
- * ƒwƒbƒhƒ‰ƒCƒ“•Û
+ * ãƒ˜ãƒƒãƒ‰ãƒ©ã‚¤ãƒ³ä¿æŒ
  */
 public class HeadlineManager {
 
 	/**
-	 * ƒwƒbƒhƒ‰ƒCƒ“
+	 * ãƒ˜ãƒƒãƒ‰ãƒ©ã‚¤ãƒ³
 	 */
 	private static Headline sHeadline;
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * 
-	 * ƒVƒ“ƒOƒ‹ƒgƒ“‚È‚Ì‚Åprivate‚Æ‚·‚é
+	 * ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³ãªã®ã§privateã¨ã™ã‚‹
 	 */
 	private HeadlineManager() {
 	}
 
 	/**
-	 * ƒwƒbƒhƒ‰ƒCƒ“‚ğæ“¾‚·‚é
+	 * ãƒ˜ãƒƒãƒ‰ãƒ©ã‚¤ãƒ³ã‚’å–å¾—ã™ã‚‹
 	 */
 	public static Headline getHeadline() {
 		if (sHeadline == null) {

@@ -37,55 +37,55 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * ƒwƒbƒhƒ‰ƒCƒ“
+ * ãƒ˜ãƒƒãƒ‰ãƒ©ã‚¤ãƒ³
  */
 public class Headline {
 
 	/**
-	 * ‚Ë‚Æ‚ç‚¶‚Ìƒwƒbƒhƒ‰ƒCƒ“‚ÌURL DAT v2
+	 * ã­ã¨ã‚‰ã˜ã®ãƒ˜ãƒƒãƒ‰ãƒ©ã‚¤ãƒ³ã®URL DAT v2
 	 */
 	private static final String NETLADIO_HEADLINE_DAT_V2_URL = "http://yp.ladio.livedoor.jp/stats/list.v2.dat";
 
 	/**
-	 * ƒwƒbƒhƒ‰ƒCƒ“‚Ìƒ\[ƒg‚Ìí—Ş NEWLY
+	 * ãƒ˜ãƒƒãƒ‰ãƒ©ã‚¤ãƒ³ã®ã‚½ãƒ¼ãƒˆã®ç¨®é¡ NEWLY
 	 */
 	public static final int SORT_TYPE_NEWLY = 0;
 
 	/**
-	 * ƒwƒbƒhƒ‰ƒCƒ“‚Ìƒ\[ƒg‚Ìí—Ş LISTENERS
+	 * ãƒ˜ãƒƒãƒ‰ãƒ©ã‚¤ãƒ³ã®ã‚½ãƒ¼ãƒˆã®ç¨®é¡ LISTENERS
 	 */
 	public static final int SORT_TYPE_LISTENERS = 1;
 	
 	/**
-	 * ƒwƒbƒhƒ‰ƒCƒ“‚Ìƒ\[ƒg‚Ìí—Ş TITLE
+	 * ãƒ˜ãƒƒãƒ‰ãƒ©ã‚¤ãƒ³ã®ã‚½ãƒ¼ãƒˆã®ç¨®é¡ TITLE
 	 */
 	public static final int SORT_TYPE_TITLE = 2;
 	
 	/**
-	 * ƒwƒbƒhƒ‰ƒCƒ“‚Ìƒ\[ƒg‚Ìí—Ş DJ
+	 * ãƒ˜ãƒƒãƒ‰ãƒ©ã‚¤ãƒ³ã®ã‚½ãƒ¼ãƒˆã®ç¨®é¡ DJ
 	 */
 	public static final int SORT_TYPE_DJ = 3;
 
 	/**
-	 * ”Ô‘gƒŠƒXƒg
+	 * ç•ªçµ„ãƒªã‚¹ãƒˆ
 	 */
 	private ArrayList<Channel> mChannelList = new ArrayList<Channel>();
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * 
 	 * @param context
-	 *            ƒRƒ“ƒeƒLƒXƒg
+	 *            ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
 	 */
 	public Headline() {
 	}
 
 	/**
-	 * ˆê’v‚·‚éÄ¶URL‚ğ‚Â”Ô‘g‚ğæ“¾‚·‚é
+	 * ä¸€è‡´ã™ã‚‹å†ç”ŸURLã‚’æŒã¤ç•ªçµ„ã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @param playUrl
-	 *            Ä¶URL
-	 * @return ChannelBŒ©‚Â‚©‚ç‚È‚¢ê‡‚ÍnullB
+	 *            å†ç”ŸURL
+	 * @return Channelã€‚è¦‹ã¤ã‹ã‚‰ãªã„å ´åˆã¯nullã€‚
 	 */
 	public Channel getChannel(String playUrl) {
 		if (playUrl == null || playUrl.length() == 0) {
@@ -105,11 +105,11 @@ public class Headline {
 	}
 
 	/**
-	 * ˆê’v‚·‚éÄ¶URL‚ğ‚Â”Ô‘g‚ğæ“¾‚·‚é
+	 * ä¸€è‡´ã™ã‚‹å†ç”ŸURLã‚’æŒã¤ç•ªçµ„ã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @param playUrl
-	 *            Ä¶URL
-	 * @return ChannelBŒ©‚Â‚©‚ç‚È‚¢ê‡‚ÍnullB
+	 *            å†ç”ŸURL
+	 * @return Channelã€‚è¦‹ã¤ã‹ã‚‰ãªã„å ´åˆã¯nullã€‚
 	 */
 	public Channel getChannel(URL playUrl) {
 		if (playUrl == null) {
@@ -139,16 +139,16 @@ public class Headline {
 	private static final Pattern chsPattern = Pattern.compile("^CHS=(\\d+)");
 
 	/**
-	 * ”Ô‘g‚Ìˆê——‚ğƒCƒ“ƒ^[ƒlƒbƒg‚©‚çæ“¾‚·‚é
+	 * ç•ªçµ„ã®ä¸€è¦§ã‚’ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆã‹ã‚‰å–å¾—ã™ã‚‹
 	 * 
-	 * ƒCƒ“ƒ^[ƒlƒbƒg‚©‚ç‚Ë‚Æ‚ç‚¶”Ô‘gˆê——‚ğæ“¾‚µA HeadlineƒNƒ‰ƒX‚ª•Û‚·‚é”Ô‘g‚ğXV‚·‚é
+	 * ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆã‹ã‚‰ã­ã¨ã‚‰ã˜ç•ªçµ„ä¸€è¦§ã‚’å–å¾—ã—ã€ Headlineã‚¯ãƒ©ã‚¹ãŒä¿æŒã™ã‚‹ç•ªçµ„ã‚’æ›´æ–°ã™ã‚‹
 	 * 
 	 * @throws IOException
-	 *             Ú‘±‚É¸”s‚µ‚½‚Æv‚í‚ê‚éê‡
+	 *             æ¥ç¶šã«å¤±æ•—ã—ãŸã¨æ€ã‚ã‚Œã‚‹å ´åˆ
 	 */
 	public void fecthHeadline() throws IOException {
 		synchronized (this) {
-			// •Û‚µ‚Ä‚¢‚é”Ô‘g‚ğ‚¢‚Á‚½‚ñƒNƒŠƒA‚·‚é
+			// ä¿æŒã—ã¦ã„ã‚‹ç•ªçµ„ã‚’ã„ã£ãŸã‚“ã‚¯ãƒªã‚¢ã™ã‚‹
 			mChannelList.clear();
 			
 			HttpURLConnection httpConnection = null;
@@ -157,7 +157,7 @@ public class Headline {
 			BufferedReader br = null;
 
 			try {
-				// ƒlƒbƒgƒ[ƒN‚©‚çƒwƒbƒhƒ‰ƒCƒ“î•ñ‚ğæ“¾‚·‚é
+				// ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ã‹ã‚‰ãƒ˜ãƒƒãƒ‰ãƒ©ã‚¤ãƒ³æƒ…å ±ã‚’å–å¾—ã™ã‚‹
 				final URL url = new URL(NETLADIO_HEADLINE_DAT_V2_URL);
 				httpConnection = (HttpURLConnection) url.openConnection();
 				httpConnection.setRequestMethod("GET");
@@ -168,7 +168,7 @@ public class Headline {
 
 				Channel channel = null;
 
-				// ‰ğÍ
+				// è§£æ
 				String line;
 				while ((line = br.readLine()) != null) {
 
@@ -476,48 +476,48 @@ public class Headline {
 	}
 
 	/**
-	 * ”Ô‘gƒŠƒXƒg‚ğæ“¾‚·‚é
+	 * ç•ªçµ„ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ”Ô‘gƒŠƒXƒg
+	 * @return ç•ªçµ„ãƒªã‚¹ãƒˆ
 	 */
 	public Channel[] getChannels() {
 		return getChannels(SORT_TYPE_NEWLY);
 	}
 
 	/**
-	 * ”Ô‘gƒŠƒXƒg‚ğæ“¾‚·‚é
+	 * ç•ªçµ„ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @param sortType
-	 *            ƒ\[ƒgí—ŞB‚±‚±‚Åw’è‚µ‚½ƒ\[ƒgí—Ş‚É]‚Á‚Ä•Ô‚è’l‚Ì”Ô‘g‚ªƒ\[ƒg‚³‚ê‚éB
-	 * @return ”Ô‘gƒŠƒXƒg
+	 *            ã‚½ãƒ¼ãƒˆç¨®é¡ã€‚ã“ã“ã§æŒ‡å®šã—ãŸã‚½ãƒ¼ãƒˆç¨®é¡ã«å¾“ã£ã¦è¿”ã‚Šå€¤ã®ç•ªçµ„ãŒã‚½ãƒ¼ãƒˆã•ã‚Œã‚‹ã€‚
+	 * @return ç•ªçµ„ãƒªã‚¹ãƒˆ
 	 */
 	public Channel[] getChannels(int sortType) {
 		return getChannels(sortType, null);
 	}
 
 	/**
-	 * ”Ô‘gƒŠƒXƒg‚ğæ“¾‚·‚é
+	 * ç•ªçµ„ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @param searchWord
-	 *            ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO’PŒêB‚±‚±‚Åw’è‚µ‚½•¶š—ñ‚ğƒXƒy[ƒX‚É•ª‚©‚¿‘‚«‚µ‚½‚»‚ê‚¼‚ê‚Ì•¶š—ñ‚É‘Î‚µ‚ÄA
-	 *            ‚·‚×‚Ä‚É‡’v‚·‚é”Ô‘g‚Ì‚İtrue‚ğ•Ô‚·iANDŒŸõjB
-	 *            ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO’PŒê‚ğw’è‚µ‚È‚¢ê‡‚Í‹ó‚à‰¿‚©null‚ğw’è‚·‚é‚±‚ÆB
-	 * @return ”Ô‘gƒŠƒXƒg
+	 *            ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°å˜èªã€‚ã“ã“ã§æŒ‡å®šã—ãŸæ–‡å­—åˆ—ã‚’ã‚¹ãƒšãƒ¼ã‚¹ã«åˆ†ã‹ã¡æ›¸ãã—ãŸãã‚Œãã‚Œã®æ–‡å­—åˆ—ã«å¯¾ã—ã¦ã€
+	 *            ã™ã¹ã¦ã«åˆè‡´ã™ã‚‹ç•ªçµ„ã®ã¿trueã‚’è¿”ã™ï¼ˆANDæ¤œç´¢ï¼‰ã€‚
+	 *            ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°å˜èªã‚’æŒ‡å®šã—ãªã„å ´åˆã¯ç©ºã‚‚æ™‚ä¾¡ã‹nullã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã€‚
+	 * @return ç•ªçµ„ãƒªã‚¹ãƒˆ
 	 */
 	public Channel[] getChannels(String searchWord) {
 		return getChannels(SORT_TYPE_NEWLY, searchWord);
 	}
 
 	/**
-	 * ”Ô‘gƒŠƒXƒg‚ğæ“¾‚·‚é
+	 * ç•ªçµ„ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @param sortType
-	 *            ƒ\[ƒgí—ŞB‚±‚±‚Åw’è‚µ‚½ƒ\[ƒgí—Ş‚É]‚Á‚Ä•Ô‚è’l‚Ì”Ô‘g‚ªƒ\[ƒg‚³‚ê‚éB
+	 *            ã‚½ãƒ¼ãƒˆç¨®é¡ã€‚ã“ã“ã§æŒ‡å®šã—ãŸã‚½ãƒ¼ãƒˆç¨®é¡ã«å¾“ã£ã¦è¿”ã‚Šå€¤ã®ç•ªçµ„ãŒã‚½ãƒ¼ãƒˆã•ã‚Œã‚‹ã€‚
 	 * @param searchWord
-	 *            ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO’PŒêB‚±‚±‚Åw’è‚µ‚½•¶š—ñ‚ğƒXƒy[ƒX‚É•ª‚©‚¿‘‚«‚µ‚½‚»‚ê‚¼‚ê‚Ì•¶š—ñ‚É‘Î‚µ‚ÄA
-	 *            ‚·‚×‚Ä‚É‡’v‚·‚é”Ô‘g‚Ì‚İtrue‚ğ•Ô‚·iANDŒŸõjB
-	 *            ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO’PŒê‚ğw’è‚µ‚È‚¢ê‡‚Í‹ó‚à‰¿‚©null‚ğw’è‚·‚é‚±‚ÆB
-	 * @return ”Ô‘gƒŠƒXƒg
+	 *            ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°å˜èªã€‚ã“ã“ã§æŒ‡å®šã—ãŸæ–‡å­—åˆ—ã‚’ã‚¹ãƒšãƒ¼ã‚¹ã«åˆ†ã‹ã¡æ›¸ãã—ãŸãã‚Œãã‚Œã®æ–‡å­—åˆ—ã«å¯¾ã—ã¦ã€
+	 *            ã™ã¹ã¦ã«åˆè‡´ã™ã‚‹ç•ªçµ„ã®ã¿trueã‚’è¿”ã™ï¼ˆANDæ¤œç´¢ï¼‰ã€‚
+	 *            ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°å˜èªã‚’æŒ‡å®šã—ãªã„å ´åˆã¯ç©ºã‚‚æ™‚ä¾¡ã‹nullã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã€‚
+	 * @return ç•ªçµ„ãƒªã‚¹ãƒˆ
 	 */
 	public Channel[] getChannels(int sortType, String searchWord) {
 		ArrayList<Channel> list = null;
@@ -526,7 +526,7 @@ public class Headline {
 			list = new ArrayList<Channel>(mChannelList);
 		}
 
-		// ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO
+		// ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°
 		if (searchWord != null && searchWord.length() != 0) {
 			ArrayList<Channel> removeList = new ArrayList<Channel>();
 			for (Channel channel : list) {
@@ -541,7 +541,7 @@ public class Headline {
 			}
 		}
 		
-		// ƒ\[ƒg
+		// ã‚½ãƒ¼ãƒˆ
 		switch (sortType) {
 		case SORT_TYPE_LISTENERS:
 			Collections.sort(list, channelComparatorListeners);
@@ -563,7 +563,7 @@ public class Headline {
 	}
 
 	/**
-	 * •Û‚µ‚Ä‚¢‚é”Ô‘gƒŠƒXƒg‚ğƒNƒŠƒA‚·‚é
+	 * ä¿æŒã—ã¦ã„ã‚‹ç•ªçµ„ãƒªã‚¹ãƒˆã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 	 */
 	public void clearChannels() {
 		synchronized (this) {
@@ -577,19 +577,19 @@ public class Headline {
 	// private static final ChannelComparator channelComparatorNewly = new ChannelComparator(SORT_TYPE_NEWLY);
 	
 	/**
-	 * ”Ô‘g‚Ì”äŠr
+	 * ç•ªçµ„ã®æ¯”è¼ƒ
 	 */
 	private static class ChannelComparator implements Comparator<Channel> {
 		/**
-		 * ƒ\[ƒgí—Ş
+		 * ã‚½ãƒ¼ãƒˆç¨®é¡
 		 */
 		private int mSortType;
 
 		/**
-		 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		 * 
 		 * @param sortType
-		 *            ƒ\[ƒgí—Ş
+		 *            ã‚½ãƒ¼ãƒˆç¨®é¡
 		 */
 		public ChannelComparator(int sortType) {
 			this.mSortType = sortType;
@@ -599,7 +599,7 @@ public class Headline {
 		public int compare(Channel object1, Channel object2) {
 			switch (mSortType) {
 			case SORT_TYPE_LISTENERS:
-				// ‘½‚¢•û‚ª‘O‚É—ˆ‚é
+				// å¤šã„æ–¹ãŒå‰ã«æ¥ã‚‹
 				if (object1.getCln() < object2.getCln()) {
 					return 1;
 				} else if (object1.getCln() > object2.getCln()) {
@@ -637,7 +637,7 @@ public class Headline {
 						&& object2.getTims() == null) {
 					return 0;
 				} else {
-					// V‚µ‚¢•û‚ª‘O‚É—ˆ‚é
+					// æ–°ã—ã„æ–¹ãŒå‰ã«æ¥ã‚‹
 					return object1.getTims().compareTo(object2.getTims()) * -1;
 				}
 			default:

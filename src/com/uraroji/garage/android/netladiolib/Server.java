@@ -23,57 +23,57 @@
 package com.uraroji.garage.android.netladiolib;
 
 /**
- * ƒT[ƒoî•ñ
+ * ã‚µãƒ¼ãƒæƒ…å ±
  */
 public class Server {
 
 	/**
-	 * ƒT[ƒo–¼
+	 * ã‚µãƒ¼ãƒå
 	 */
 	private ServerName mServerName;
 
 	/**
-	 * ¬G“xƒGƒ‰[iƒT[ƒo‚ÉÚ‘±•s”\j
+	 * æ··é›‘åº¦ã‚¨ãƒ©ãƒ¼ï¼ˆã‚µãƒ¼ãƒã«æ¥ç¶šä¸èƒ½ï¼‰
 	 */
 	public static final int ERROR_CONGESTION = 0;
 
 	/**
-	 * ¬G“x
+	 * æ··é›‘åº¦
 	 */
 	private int mCongestionDegree = ERROR_CONGESTION;
 
 	/**
-	 * •s–¾‚Èƒ\[ƒXƒRƒlƒNƒVƒ‡ƒ“”
+	 * ä¸æ˜ãªã‚½ãƒ¼ã‚¹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°
 	 */
 	public static final int UNKNOWN_SOURCE = -1;
 
 	/**
-	 * ƒ\[ƒXƒRƒlƒNƒVƒ‡ƒ“”(”Ô‘g”)
+	 * ã‚½ãƒ¼ã‚¹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ç•ªçµ„æ•°)
 	 */
 	private int mSource = UNKNOWN_SOURCE;
 
 	/**
-	 * •s–¾‚ÈƒNƒ‰ƒCƒAƒ“ƒgƒRƒlƒNƒVƒ‡ƒ“”
+	 * ä¸æ˜ãªã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°
 	 */
 	public static final int UNKNOWN_CLIENT = -1;
 
 	/**
-	 * ƒNƒ‰ƒCƒAƒ“ƒgƒRƒlƒNƒVƒ‡ƒ“”(ƒŠƒXƒi[”)
+	 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ãƒªã‚¹ãƒŠãƒ¼æ•°)
 	 */
 	private int mClient = UNKNOWN_CLIENT;
 
 	/**
-	 * •s–¾‚È“]‘—ƒf[ƒ^—Ê
+	 * ä¸æ˜ãªè»¢é€ãƒ‡ãƒ¼ã‚¿é‡
 	 */
 	public static final int UNKNOWN_TRANSFER = -1;
 
 	/**
-	 * “]‘—ƒf[ƒ^—Ê(Out‘¤) kbps
+	 * è»¢é€ãƒ‡ãƒ¼ã‚¿é‡(Outå´) kbps
 	 */
 	private int mTransfer = UNKNOWN_TRANSFER;
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 */
 	/*package*/ Server() {
 	}
@@ -86,104 +86,104 @@ public class Server {
 	}
 
 	/**
-	 * ƒT[ƒo–¼‚ğæ“¾‚·‚é
+	 * ã‚µãƒ¼ãƒåã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒT[ƒo–¼
+	 * @return ã‚µãƒ¼ãƒå
 	 */
 	public final ServerName getServerName() {
 		return mServerName;
 	}
 
 	/**
-	 * ƒT[ƒo–¼‚ğİ’è‚·‚é
+	 * ã‚µãƒ¼ãƒåã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param mServerName
-	 *            ƒT[ƒo–¼
+	 *            ã‚µãƒ¼ãƒå
 	 */
 	/*package*/ final void setServerName(String serverName) {
 		this.mServerName = new ServerName(serverName);
 	}
 
 	/**
-	 * ¬G“x‚ğæ“¾‚·‚é
+	 * æ··é›‘åº¦ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ¬G“x
+	 * @return æ··é›‘åº¦
 	 */
 	public final int getCongestionDegree() {
 		return mCongestionDegree;
 	}
 
 	/**
-	 * ¬G“x‚ğİ’è‚·‚é
+	 * æ··é›‘åº¦ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param congestionDegree
-	 *            ¬G“x
+	 *            æ··é›‘åº¦
 	 */
 	/*package*/ final void setCongestionDegree(int congestionDegree) {
 		this.mCongestionDegree = congestionDegree;
 	}
 
 	/**
-	 * ƒ\[ƒXƒRƒlƒNƒVƒ‡ƒ“”(”Ô‘g”)‚ğæ“¾‚·‚é
+	 * ã‚½ãƒ¼ã‚¹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ç•ªçµ„æ•°)ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒ\[ƒXƒRƒlƒNƒVƒ‡ƒ“”(”Ô‘g”)
+	 * @return ã‚½ãƒ¼ã‚¹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ç•ªçµ„æ•°)
 	 */
 	public final int getSource() {
 		return mSource;
 	}
 
 	/**
-	 * ƒ\[ƒXƒRƒlƒNƒVƒ‡ƒ“”(”Ô‘g”)‚ğİ’è‚·‚é
+	 * ã‚½ãƒ¼ã‚¹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ç•ªçµ„æ•°)ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param source
-	 *            ƒ\[ƒXƒRƒlƒNƒVƒ‡ƒ“”(”Ô‘g”)
+	 *            ã‚½ãƒ¼ã‚¹ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ç•ªçµ„æ•°)
 	 */
 	/*package*/ final void setSource(int source) {
 		this.mSource = source;
 	}
 
 	/**
-	 * ƒNƒ‰ƒCƒAƒ“ƒgƒRƒlƒNƒVƒ‡ƒ“”(ƒŠƒXƒi[”)‚ğæ“¾‚·‚é
+	 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ãƒªã‚¹ãƒŠãƒ¼æ•°)ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return ƒNƒ‰ƒCƒAƒ“ƒgƒRƒlƒNƒVƒ‡ƒ“”(ƒŠƒXƒi[”)
+	 * @return ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ãƒªã‚¹ãƒŠãƒ¼æ•°)
 	 */
 	public final int getClient() {
 		return mClient;
 	}
 
 	/**
-	 * ƒNƒ‰ƒCƒAƒ“ƒgƒRƒlƒNƒVƒ‡ƒ“”(ƒŠƒXƒi[”)‚ğİ’è‚·‚é
+	 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ãƒªã‚¹ãƒŠãƒ¼æ•°)ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param client
-	 *            ƒNƒ‰ƒCƒAƒ“ƒgƒRƒlƒNƒVƒ‡ƒ“”(ƒŠƒXƒi[”)
+	 *            ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³æ•°(ãƒªã‚¹ãƒŠãƒ¼æ•°)
 	 */
 	/*package*/ final void setClient(int client) {
 		this.mClient = client;
 	}
 
 	/**
-	 * “]‘—ƒf[ƒ^—Ê(Out‘¤)‚ğæ“¾‚·‚é
+	 * è»¢é€ãƒ‡ãƒ¼ã‚¿é‡(Outå´)ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return “]‘—ƒf[ƒ^—Ê(Out‘¤)
+	 * @return è»¢é€ãƒ‡ãƒ¼ã‚¿é‡(Outå´)
 	 */
 	public final int getTransfer() {
 		return mTransfer;
 	}
 
 	/**
-	 * “]‘—ƒf[ƒ^—Ê(Out‘¤)‚ğİ’è‚·‚é
+	 * è»¢é€ãƒ‡ãƒ¼ã‚¿é‡(Outå´)ã‚’è¨­å®šã™ã‚‹
 	 * 
 	 * @param transfer
-	 *            “]‘—ƒf[ƒ^—Ê(Out‘¤)
+	 *            è»¢é€ãƒ‡ãƒ¼ã‚¿é‡(Outå´)
 	 */
 	/*package*/ final void setTransfer(int transfer) {
 		this.mTransfer = transfer;
 	}
 
 	/**
-	 * Ú‘±‰Â”\‚ÈƒT[ƒo‚©‚ğæ“¾‚·‚é
+	 * æ¥ç¶šå¯èƒ½ãªã‚µãƒ¼ãƒã‹ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @return Ú‘±‰Â”\‚È‚çtrueA‚»‚êˆÈŠO‚È‚çfalse
+	 * @return æ¥ç¶šå¯èƒ½ãªã‚‰trueã€ãã‚Œä»¥å¤–ãªã‚‰false
 	 */
 	public boolean isConnectable() {
 		return mServerName != null && mCongestionDegree != ERROR_CONGESTION;
