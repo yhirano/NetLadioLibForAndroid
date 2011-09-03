@@ -44,7 +44,7 @@ public class Headline {
 	/**
 	 * ねとらじのヘッドラインのURL DAT v2
 	 */
-	private static final String NETLADIO_HEADLINE_DAT_V2_URL = "http://yp.ladio.livedoor.jp/stats/list.v2.dat";
+	private static final String NETLADIO_HEADLINE_DAT_V2_URL = "http://yp.ladio.net/stats/list.v2.dat";
 
 	/**
 	 * ヘッドラインのソートの種類 NEWLY
