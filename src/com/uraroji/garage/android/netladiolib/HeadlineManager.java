@@ -27,26 +27,24 @@ package com.uraroji.garage.android.netladiolib;
  */
 public class HeadlineManager {
 
-	/**
-	 * ヘッドライン
-	 */
-	private static Headline sHeadline;
+    /**
+     * ヘッドライン
+     */
+    private static Headline sHeadline;
 
-	/**
-	 * コンストラクタ
-	 * 
-	 * シングルトンなのでprivateとする
-	 */
-	private HeadlineManager() {
-	}
+    /**
+     * コンストラクタ シングルトンなのでprivateとする
+     */
+    private HeadlineManager() {
+    }
 
-	/**
-	 * ヘッドラインを取得する
-	 */
-	public static Headline getHeadline() {
-		if (sHeadline == null) {
-			sHeadline = new Headline();
-		}
-		return sHeadline;
-	}
+    /**
+     * ヘッドラインを取得する
+     */
+    public static Headline getHeadline() {
+        if (sHeadline == null) {
+            sHeadline = new Headline();
+        }
+        return sHeadline;
+    }
 }

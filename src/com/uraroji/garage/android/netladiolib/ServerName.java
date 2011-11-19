@@ -29,73 +29,71 @@ import java.security.InvalidParameterException;
  */
 public class ServerName {
 
-	/**
-	 * サーバ名
-	 */
-	private String mName;
+    /**
+     * サーバ名
+     */
+    private String mName;
 
-	/**
-	 * 不明なポート番号
-	 */
-	public static final int UNKNOWN_PORT = -1;
+    /**
+     * 不明なポート番号
+     */
+    public static final int UNKNOWN_PORT = -1;
 
-	/**
-	 * ポート番号
-	 */
-	private int mPort = UNKNOWN_PORT;
+    /**
+     * ポート番号
+     */
+    private int mPort = UNKNOWN_PORT;
 
-	/**
-	 * コンストラクタ
-	 * 
-	 * @param serverName
-	 *            サーバ名。xxx.com:8080のようなサーバ名とIPが組み合った文字列を指定すること。
-	 * @throws InvalidParameterException
-	 *             xxx.com:8080の形式に沿っていないサーバ名が指定された。
-	 */
-	/*package*/ ServerName(String serverName) {
-		String[] token = serverName.split(":");
-		if (token.length >= 2) {
-			this.mName = token[0];
-			try {
-				this.mPort = Integer.valueOf(token[1]);
-			} catch (NumberFormatException e) {
-				throw new InvalidParameterException();
-			}
-		} else {
-			throw new InvalidParameterException();
-		}
-	}
+    /**
+     * コンストラクタ
+     * 
+     * @param serverName サーバ名。xxx.com:8080のようなサーバ名とIPが組み合った文字列を指定すること。
+     * @throws InvalidParameterException xxx.com:8080の形式に沿っていないサーバ名が指定された。
+     */
+    /* package */ServerName(String serverName) {
+        String[] token = serverName.split(":");
+        if (token.length >= 2) {
+            this.mName = token[0];
+            try {
+                this.mPort = Integer.valueOf(token[1]);
+            } catch (NumberFormatException e) {
+                throw new InvalidParameterException();
+            }
+        } else {
+            throw new InvalidParameterException();
+        }
+    }
 
-	@Override
-	public String toString() {
-		return "ServerName [mName=" + mName + ", mPort=" + mPort + "]";
-	}
+    @Override
+    public String toString() {
+        return "ServerName [mName=" + mName + ", mPort=" + mPort + "]";
+    }
 
-	/**
-	 * サーバ名を取得する
-	 * 
-	 * @return サーバ名
-	 */
-	public final String getName() {
-		return mName;
-	}
+    /**
+     * サーバ名を取得する
+     * 
+     * @return サーバ名
+     */
+    public final String getName() {
+        return mName;
+    }
 
-	/**
-	 * ポート番号を取得する
-	 * 
-	 * @return ポート番号
-	 */
-	public final int getPort() {
-		return mPort;
-	}
-	
-	/**
-	 * サーバ名を文字列として返す。<br />
-	 * xxx.com:8080の形式に沿う。
-	 * 
-	 * @return 文字列としてのサーバ名
-	 */
-	/*package*/ String asString() {
-		return mName + ":" + String.valueOf(mPort);
-	}
+    /**
+     * ポート番号を取得する
+     * 
+     * @return ポート番号
+     */
+    public final int getPort() {
+        return mPort;
+    }
+
+    /**
+     * サーバ名を文字列として返す。<br />
+     * xxx.com:8080の形式に沿う。
+     * 
+     * @return 文字列としてのサーバ名
+     */
+    /* package */String asString() {
+        return mName + ":" + String.valueOf(mPort);
+    }
 }
