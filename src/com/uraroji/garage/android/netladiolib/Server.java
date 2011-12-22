@@ -75,7 +75,7 @@ public class Server {
     /**
      * コンストラクタ
      */
-    /* package */Server() {
+    /*package*/ Server() {
     }
 
     @Override
@@ -99,7 +99,7 @@ public class Server {
      * 
      * @param mServerName サーバ名
      */
-    /* package */final void setServerName(String serverName) {
+    /*package*/ final void setServerName(String serverName) {
         this.mServerName = new ServerName(serverName);
     }
 
@@ -117,7 +117,7 @@ public class Server {
      * 
      * @param congestionDegree 混雑度
      */
-    /* package */final void setCongestionDegree(int congestionDegree) {
+    /*package*/ final void setCongestionDegree(int congestionDegree) {
         this.mCongestionDegree = congestionDegree;
     }
 
@@ -135,7 +135,7 @@ public class Server {
      * 
      * @param source ソースコネクション数(番組数)
      */
-    /* package */final void setSource(int source) {
+    /*package*/ final void setSource(int source) {
         this.mSource = source;
     }
 
@@ -153,7 +153,7 @@ public class Server {
      * 
      * @param client クライアントコネクション数(リスナー数)
      */
-    /* package */final void setClient(int client) {
+    /*package*/ final void setClient(int client) {
         this.mClient = client;
     }
 
@@ -171,7 +171,7 @@ public class Server {
      * 
      * @param transfer 転送データ量(Out側)
      */
-    /* package */final void setTransfer(int transfer) {
+    /*package*/ final void setTransfer(int transfer) {
         this.mTransfer = transfer;
     }
 

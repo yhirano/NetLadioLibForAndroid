@@ -161,7 +161,7 @@ public class Channel implements Serializable {
     /**
      * コンストラクタ
      */
-    /* package */Channel() {
+    /*package*/ Channel() {
     }
 
     @Override
@@ -189,7 +189,7 @@ public class Channel implements Serializable {
      * 
      * @param surl 番組の詳細内容を表示するサイトのURL
      */
-    /* package */final void setSurl(URL surl) {
+    /*package*/ final void setSurl(URL surl) {
         this.mSurl = surl;
     }
 
@@ -199,7 +199,7 @@ public class Channel implements Serializable {
      * @param surl 番組の詳細内容を表示するサイトのURL
      * @throws MalformedURLException URLが正しくない場合
      */
-    /* package */final void setSurl(String surl) throws MalformedURLException {
+    /*package*/ final void setSurl(String surl) throws MalformedURLException {
         this.mSurl = new URL(surl);
     }
 
@@ -235,7 +235,7 @@ public class Channel implements Serializable {
      * 
      * @param tims 放送開始時刻。設定されていない場合はnull。
      */
-    /* package */final void setTims(Date tims) {
+    /*package*/ final void setTims(Date tims) {
         this.mTims = tims;
     }
 
@@ -251,7 +251,7 @@ public class Channel implements Serializable {
      * @param tims 放送開始時刻の文字列
      * @throws ParseException 文字列のフォーマットが正しくない
      */
-    /* package */final void setTims(String tims) throws ParseException {
+    /*package*/ final void setTims(String tims) throws ParseException {
         this.mTims = INPUT_SDF.parse(tims);
     }
 
@@ -260,7 +260,7 @@ public class Channel implements Serializable {
      * 
      * @param srv 配信サーバホスト名
      */
-    /* package */final void setSrv(String srv) {
+    /*package*/ final void setSrv(String srv) {
         this.mSrv = srv;
 
         // 放送URLキャッシュをクリアする
@@ -273,7 +273,7 @@ public class Channel implements Serializable {
      * 
      * @param prt 配信サーバポート番号
      */
-    /* package */final void setPrt(int prt) {
+    /*package*/ final void setPrt(int prt) {
         this.mPrt = prt;
 
         // 放送URLキャッシュをクリアする
@@ -286,7 +286,7 @@ public class Channel implements Serializable {
      * 
      * @param mnt 配信サーバマウント
      */
-    /* package */final void setMnt(String mnt) {
+    /*package*/ final void setMnt(String mnt) {
         this.mMnt = mnt;
 
         // 放送URLキャッシュをクリアする
@@ -308,7 +308,7 @@ public class Channel implements Serializable {
      * 
      * @param type 配信フォーマットの種類
      */
-    /* package */final void setType(String type) {
+    /*package*/ final void setType(String type) {
         this.mType = type;
     }
 
@@ -326,7 +326,7 @@ public class Channel implements Serializable {
      * 
      * @param nam タイトル
      */
-    /* package */final void setNam(String nam) {
+    /*package*/ final void setNam(String nam) {
         this.mNam = nam;
 
         // isMatch結果を保持するキャッシュを削除
@@ -347,7 +347,7 @@ public class Channel implements Serializable {
      * 
      * @param gnl ジャンル
      */
-    /* package */final void setGnl(String gnl) {
+    /*package*/ final void setGnl(String gnl) {
         this.mGnl = gnl;
 
         // isMatch結果を保持するキャッシュを削除
@@ -368,7 +368,7 @@ public class Channel implements Serializable {
      * 
      * @param desc 放送内容
      */
-    /* package */final void setDesc(String desc) {
+    /*package*/ final void setDesc(String desc) {
         this.mDesc = desc;
 
         // isMatch結果を保持するキャッシュを削除
@@ -389,7 +389,7 @@ public class Channel implements Serializable {
      * 
      * @param dj DJ
      */
-    /* package */final void setDj(String dj) {
+    /*package*/ final void setDj(String dj) {
         this.mDj = dj;
 
         // isMatch結果を保持するキャッシュを削除
@@ -410,7 +410,7 @@ public class Channel implements Serializable {
      * 
      * @param song 現在の曲名情報
      */
-    /* package */final void setSong(String song) {
+    /*package*/ final void setSong(String song) {
         this.mSong = song;
     }
 
@@ -428,7 +428,7 @@ public class Channel implements Serializable {
      * 
      * @param url WebサイトのURL
      */
-    /* package */final void setUrl(URL url) {
+    /*package*/ final void setUrl(URL url) {
         this.mUrl = url;
     }
 
@@ -438,7 +438,7 @@ public class Channel implements Serializable {
      * @param url WebサイトのURL
      * @throws MalformedURLException URLが正しくない場合
      */
-    /* package */final void setUrl(String url) throws MalformedURLException {
+    /*package*/ final void setUrl(String url) throws MalformedURLException {
         this.mUrl = new URL(url);
     }
 
@@ -457,7 +457,7 @@ public class Channel implements Serializable {
      * 
      * @param cln 現リスナ数。0未満を設定した場合、UNKNOWN_LISTENER_NUMとなる。
      */
-    /* package */final void setCln(int cln) {
+    /*package*/ final void setCln(int cln) {
         this.mCln = (cln >= 0) ? cln : UNKNOWN_LISTENER_NUM;
     }
 
@@ -476,7 +476,7 @@ public class Channel implements Serializable {
      * 
      * @param clns 総リスナ数。0未満を設定した場合、UNKNOWN_LISTENER_NUMとなる。
      */
-    /* package */final void setClns(int clns) {
+    /*package*/ final void setClns(int clns) {
         this.mClns = (clns >= 0) ? clns : UNKNOWN_LISTENER_NUM;
     }
 
@@ -495,7 +495,7 @@ public class Channel implements Serializable {
      * 
      * @param max 最大リスナ数。0未満を設定した場合、UNKNOWN_LISTENER_NUMとなる。
      */
-    /* package */final void setMax(int max) {
+    /*package*/ final void setMax(int max) {
         this.mMax = (max >= 0) ? max : UNKNOWN_LISTENER_NUM;
     }
 
@@ -514,7 +514,7 @@ public class Channel implements Serializable {
      * 
      * @param bit ビットレート（Kbps）。0未満を設定した場合、UNKNOWN_BITRATE_NUMとなる。
      */
-    /* package */final void setBit(int bit) {
+    /*package*/ final void setBit(int bit) {
         this.mBit = (bit >= 0) ? bit : UNKNOWN_BITRATE_NUM;
     }
 
@@ -533,7 +533,7 @@ public class Channel implements Serializable {
      * 
      * @param smpl サンプリングレート。0未満を設定した場合、UNKNOWN_SAMPLING_RATE_NUMとなる。
      */
-    /* package */final void setSmpl(int smpl) {
+    /*package*/ final void setSmpl(int smpl) {
         this.mSmpl = (smpl >= 0) ? smpl : UNKNOWN_CHANNEL_NUM;
     }
 
@@ -570,7 +570,7 @@ public class Channel implements Serializable {
      * 
      * @param chs チャンネル数。0未満を設定した場合、UNKNOWN_CHANNEL_NUMとなる。
      */
-    /* package */final void setChs(int chs) {
+    /*package*/ final void setChs(int chs) {
         this.mChs = (chs >= 0) ? chs : UNKNOWN_CHANNEL_NUM;
     }
 
@@ -624,7 +624,7 @@ public class Channel implements Serializable {
      *            フィルタリング単語を指定しない場合は空も時価かnullを指定すること。
      * @return trueの場合はフィルタリング単語に合致する番組である。それ以外はfalse。
      */
-    /* package */boolean isMatch(String searchWord) {
+    /*package*/ boolean isMatch(String searchWord) {
         // フィルタリング単語が指定されていない場合は無条件に合致する
         if (searchWord == null || searchWord.length() == 0) {
             return true;
