@@ -22,7 +22,6 @@
 
 package com.uraroji.garage.android.netladiolib;
 
-import java.security.InvalidParameterException;
 
 /**
  * サーバ名
@@ -48,7 +47,7 @@ public class ServerName {
      * コンストラクタ
      * 
      * @param serverName サーバ名。xxx.com:8080のようなサーバ名とIPが組み合った文字列を指定すること。
-     * @throws InvalidParameterException xxx.com:8080の形式に沿っていないサーバ名が指定された。
+     * @throws IllegalArgumentExceptionØ xxx.com:8080の形式に沿っていないサーバ名が指定された。
      */
     /* package */ServerName(String serverName) {
         String[] token = serverName.split(":");
@@ -57,10 +56,10 @@ public class ServerName {
             try {
                 this.mPort = Integer.valueOf(token[1]);
             } catch (NumberFormatException e) {
-                throw new InvalidParameterException();
+                throw new IllegalArgumentException();
             }
         } else {
-            throw new InvalidParameterException();
+            throw new IllegalArgumentException();
         }
     }
 
