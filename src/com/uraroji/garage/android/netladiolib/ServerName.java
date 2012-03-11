@@ -49,7 +49,7 @@ public class ServerName {
      * @param serverName サーバ名。xxx.com:8080のようなサーバ名とIPが組み合った文字列を指定すること。
      * @throws IllegalArgumentExceptionØ xxx.com:8080の形式に沿っていないサーバ名が指定された。
      */
-    /* package */ServerName(String serverName) {
+    /*package*/ ServerName(String serverName) {
         String[] token = serverName.split(":");
         if (token.length >= 2) {
             this.mName = token[0];
@@ -92,7 +92,7 @@ public class ServerName {
      * 
      * @return 文字列としてのサーバ名
      */
-    /* package */String asString() {
+    /*package*/ String asString() {
         return mName + ":" + String.valueOf(mPort);
     }
 }
