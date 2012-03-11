@@ -543,7 +543,7 @@ public class Headline {
                 Collections.sort(list, channelComparatorDj);
                 break;
             case SORT_TYPE_NEWLY:
-                // Collections.sort(list, channelComparatorNewly);
+                Collections.sort(list, channelComparatorNewly);
                 break;
             default:
                 break;
@@ -566,9 +566,8 @@ public class Headline {
     private static final ChannelComparator channelComparatorTitle = new ChannelComparator(
             SORT_TYPE_TITLE);
     private static final ChannelComparator channelComparatorDj = new ChannelComparator(SORT_TYPE_DJ);
-
-    // private static final ChannelComparator channelComparatorNewly = new
-    // ChannelComparator(SORT_TYPE_NEWLY);
+    private static final ChannelComparator channelComparatorNewly = new ChannelComparator(
+            SORT_TYPE_NEWLY);
 
     /**
      * 番組の比較
