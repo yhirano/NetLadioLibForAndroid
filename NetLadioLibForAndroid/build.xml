@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="jar">
+	<property name="version" value="1.12.1" />
+
 	<property name="build.jar" value="netladiolib.jar" />
 	<property name="build.src" value="./src" />
 	<property name="build.dest" value="./jarbin" />
-
+	<property name="jar.specification.title" value="NetLadioLibLibForAndroid" />
+	<property name="jar.specification.version" value="${version}" />
+	<property name="jar.specification.vendor" value="garage.uraroji.com" />
+	<property name="jar.specification.title" value="com.uraroji.garage.android.netladiolib" />
+	<property name="jar.specification.version" value="${version}" />
+	<property name="jar.specification.vendor" value="garage.uraroji.com" />
+	
 	<target name="clean">
 		<delete file="${build.jar}" />
 		<delete dir="${build.dest}" />
@@ -20,6 +28,14 @@
 	<target name="jar" depends="compile">
 		<jar destfile="${build.jar}">
 			<fileset dir="${build.dest}" />
+			<manifest>
+				<attribute name="Specification-Title" value="${jar.specification.title}"/>
+				<attribute name="Specification-Version" value="${jar.specification.version}"/>
+				<attribute name="Specification-Vendor"  value="${jar.specification.vendor}"/>
+				<attribute name="Implementation-Title" value="${jar.specification.title}"/>
+				<attribute name="Implementation-Version" value="${jar.specification.version}"/>
+				<attribute name="Implementation-Vendor"  value="${jar.specification.vendor}"/>
+			</manifest>
 		</jar>
 		<delete dir="${build.dest}" />
 	</target>
