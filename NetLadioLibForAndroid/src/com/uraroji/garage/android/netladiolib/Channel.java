@@ -149,16 +149,6 @@ public class Channel implements Serializable {
     private int mChs = UNKNOWN_CHANNEL_NUM;
 
     /**
-     * 放送URLのキャッシュ 放送URLを一度生成したらそれをキャッシュするために用意
-     */
-    private transient URL mPlayUrlCache;
-
-    /**
-     * 放送URLのキャッシュが有効か
-     */
-    private transient boolean mIsCreatedPlayUrlCache = false;
-
-    /**
      * コンストラクタ
      */
     /*package*/ Channel() {
@@ -262,10 +252,6 @@ public class Channel implements Serializable {
      */
     /*package*/ final void setSrv(String srv) {
         this.mSrv = srv;
-
-        // 放送URLキャッシュをクリアする
-        mPlayUrlCache = null;
-        mIsCreatedPlayUrlCache = false;
     }
 
     /**
@@ -275,10 +261,6 @@ public class Channel implements Serializable {
      */
     /*package*/ final void setPrt(int prt) {
         this.mPrt = prt;
-
-        // 放送URLキャッシュをクリアする
-        mPlayUrlCache = null;
-        mIsCreatedPlayUrlCache = false;
     }
 
     /**
@@ -288,10 +270,6 @@ public class Channel implements Serializable {
      */
     /*package*/ final void setMnt(String mnt) {
         this.mMnt = mnt;
-
-        // 放送URLキャッシュをクリアする
-        mPlayUrlCache = null;
-        mIsCreatedPlayUrlCache = false;
     }
 
     /**
@@ -581,11 +559,7 @@ public class Channel implements Serializable {
      * @return 番組の放送URL。番組の放送URLが存在しない場合はnull。
      */
     public URL getPlayUrl() {
-        if (mIsCreatedPlayUrlCache == false) {
-            mPlayUrlCache = createPlayUrl(mSrv, mPrt, mMnt);
-            mIsCreatedPlayUrlCache = true;
-        }
-        return mPlayUrlCache;
+        return createPlayUrl(mSrv, mPrt, mMnt);
     }
 
     /**
@@ -597,13 +571,12 @@ public class Channel implements Serializable {
      * @return 再生URL。配信サーバホスト名・ポート番号・マウントのいずれかが不正な場合はnull。
      */
     public static URL createPlayUrl(String srv, int prt, String mnt) {
-        if (srv == null || srv.length() == 0 || prt < 0 || mnt == null
-                || mnt.length() == 0) {
+        if (srv == null || srv.length() == 0 || prt < 0 || mnt == null || mnt.length() == 0) {
             return null;
         }
 
         try {
-            return new URL("http://" + srv + ":" + String.valueOf(prt) + mnt);
+            return new URL(String.format("http://%s:%d%s", srv, prt, mnt));
         } catch (MalformedURLException e) {
             // 放送URLが生成できない場合
             return null;
