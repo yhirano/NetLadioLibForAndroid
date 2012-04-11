@@ -67,6 +67,11 @@ public class Headline {
     public static final int SORT_TYPE_DJ = 3;
 
     /**
+     * ヘッドラインのソートの種類 ソートしない
+     */
+    public static final int SORT_TYPE_NONE = 4;
+
+    /**
      * 番組リスト
      */
     private ArrayList<Channel> mChannelList = new ArrayList<Channel>();
@@ -474,7 +479,7 @@ public class Headline {
      * @return 番組リスト
      */
     public Channel[] getChannels() {
-        return getChannels(SORT_TYPE_NEWLY);
+        return getChannels(SORT_TYPE_NONE);
     }
 
     /**
@@ -496,7 +501,7 @@ public class Headline {
      * @return 番組リスト
      */
     public Channel[] getChannels(String searchWord) {
-        return getChannels(SORT_TYPE_NEWLY, searchWord);
+        return getChannels(SORT_TYPE_NONE, searchWord);
     }
 
     /**
@@ -544,6 +549,7 @@ public class Headline {
             case SORT_TYPE_NEWLY:
                 Collections.sort(list, channelComparatorNewly);
                 break;
+            case SORT_TYPE_NONE:
             default:
                 break;
         }
@@ -631,6 +637,7 @@ public class Headline {
                         // 新しい方が前に来る
                         return object1.getTims().compareTo(object2.getTims()) * -1;
                     }
+                case SORT_TYPE_NONE:
                 default:
                     throw new IllegalStateException("Unknown sort type specified.");
             }
