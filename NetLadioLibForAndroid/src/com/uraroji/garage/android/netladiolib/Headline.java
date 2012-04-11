@@ -140,7 +140,7 @@ public class Headline {
      * 
      * @throws IOException 接続に失敗したと思われる場合
      */
-    public void fecthHeadline() throws IOException {
+    public void fetchHeadline() throws IOException {
         synchronized (this) {
             // 保持している番組をいったんクリアする
             mChannelList.clear();
@@ -165,7 +165,6 @@ public class Headline {
                 // 解析
                 String line;
                 while ((line = br.readLine()) != null) {
-
                     Matcher surlMatcher = surlPattern.matcher(line);
                     if (surlMatcher.matches()) {
                         try {
