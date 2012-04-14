@@ -33,6 +33,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -523,8 +524,10 @@ public class Headline {
         // フィルタリング
         if (searchWord != null && searchWord.length() != 0) {
             ArrayList<Channel> removeList = new ArrayList<Channel>();
+            // 文字列を空白文字で分割する
+            String[] words = searchWord.split(" |\\t|　");
             for (Channel channel : list) {
-                if (channel.isMatch(searchWord) == false) {
+                if (channel.isMatch(words) == false) {
                     removeList.add(channel);
                 }
             }
@@ -594,52 +597,103 @@ public class Headline {
 
         @Override
         public int compare(Channel object1, Channel object2) {
+            int result = 0;
             switch (mSortType) {
                 case SORT_TYPE_LISTENERS:
                     // 多い方が前に来る
                     if (object1.getCln() < object2.getCln()) {
-                        return 1;
+                        result = 1;
                     } else if (object1.getCln() > object2.getCln()) {
-                        return -1;
+                        result = -1;
                     } else if (object1.getCln() == object2.getCln()) {
-                        return 0;
+                        result = 0;
                     }
+                    break;
                 case SORT_TYPE_TITLE:
-                    if (object1.getNam() != null && object2.getNam() == null) {
-                        return -1;
-                    } else if (object1.getNam() == null && object2.getNam() != null) {
-                        return 1;
-                    } else if (object1.getNam() == null && object2.getNam() == null) {
-                        return 0;
-                    } else {
-                        return object1.getNam().compareTo(object2.getNam());
+                    // タイトルで比較
+                    result = compareString(object1.getNam(), object2.getNam());
+                    if (result == 0) {
+                        // タイトルがおなじ場合はDJで比較
+                        result = compareString(object1.getDj(), object2.getDj());
+                        // タイトルとDJがおなじ場合は日付で比較
+                        if (result == 0) {
+                            result = compareDate(object1.getTims(), object2.getTims());
+                        }
                     }
+                    break;
                 case SORT_TYPE_DJ:
-                    if (object1.getDj() != null && object2.getDj() == null) {
-                        return -1;
-                    } else if (object1.getDj() == null && object2.getDj() != null) {
-                        return 1;
-                    } else if (object1.getDj() == null && object2.getDj() == null) {
-                        return 0;
-                    } else {
-                        return object1.getDj().compareTo(object2.getDj());
+                    // DJで比較
+                    result = compareString(object1.getDj(), object2.getDj());
+                    if (result == 0) {
+                        // DJがおなじ場合はタイトルで比較
+                        result = compareString(object1.getNam(), object2.getNam());
+                        // タイトルとDJがおなじ場合は日付で比較
+                        if (result == 0) {
+                            result = compareDate(object1.getTims(), object2.getTims());
+                        }
                     }
+                    break;
                 case SORT_TYPE_NEWLY:
-                    if (object1.getTims() != null && object2.getTims() == null) {
-                        return -1;
-                    } else if (object1.getTims() == null
-                            && object2.getTims() != null) {
-                        return 1;
-                    } else if (object1.getTims() == null
-                            && object2.getTims() == null) {
-                        return 0;
-                    } else {
-                        // 新しい方が前に来る
-                        return object1.getTims().compareTo(object2.getTims()) * -1;
-                    }
+                    result = compareDate(object1.getTims(), object2.getTims());
+                    break;
                 case SORT_TYPE_NONE:
                 default:
                     throw new IllegalStateException("Unknown sort type specified.");
+            }
+            
+            return result;
+        }
+        
+        /**
+         * 文字列を比較する
+         * 
+         * 文字の長さが0の場合は後ろに来るようにしている
+         * 
+         * @param str1 文字列1
+         * @param str2 文字列2
+         * @return 比較結果
+         */
+        private static int compareString(String str1, String str2) {
+            if (!isEmptyString(str1) && isEmptyString(str2)) {
+                return -1;
+            } else if (isEmptyString(str1) && !isEmptyString(str2)) {
+                return 1;
+            } else if (isEmptyString(str1) && isEmptyString(str2)) {
+                return 0;
+            } else {
+                return str1.trim().compareTo(str2.trim());
+            }
+        }
+
+        /**
+         * 文字列が空かnullの場合にはtrueを返す
+         * 
+         * @param str 文字列
+         * @return 文字列が空かnull
+         */
+        private static boolean isEmptyString(String str) {
+            return (str == null || str.length() == 0);
+        }
+        
+        /**
+         * 日付で比較する
+         * 
+         * 新しい方が前
+         * 
+         * @param date1 日付1
+         * @param date2 日付2
+         * @return
+         */
+        private static int compareDate(Date date1, Date date2) {
+            if (date1 != null && date2 == null) {
+                return -1;
+            } else if (date1 == null && date2 != null) {
+                return 1;
+            } else if (date1 == null && date2 == null) {
+                return 0;
+            } else {
+                // 新しい方が前に来る
+                return date1.compareTo(date2) * -1;
             }
         }
     }

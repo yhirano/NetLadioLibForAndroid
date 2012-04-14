@@ -23,11 +23,11 @@
 package com.uraroji.garage.android.netladiolib;
 
 import java.io.Serializable;
-import java.lang.ref.SoftReference;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -306,9 +306,6 @@ public class Channel implements Serializable {
      */
     /*package*/ final void setNam(String nam) {
         this.mNam = nam;
-
-        // isMatch結果を保持するキャッシュを削除
-        mIsMatchCache.clear();
     }
 
     /**
@@ -327,9 +324,6 @@ public class Channel implements Serializable {
      */
     /*package*/ final void setGnl(String gnl) {
         this.mGnl = gnl;
-
-        // isMatch結果を保持するキャッシュを削除
-        mIsMatchCache.clear();
     }
 
     /**
@@ -348,9 +342,6 @@ public class Channel implements Serializable {
      */
     /*package*/ final void setDesc(String desc) {
         this.mDesc = desc;
-
-        // isMatch結果を保持するキャッシュを削除
-        mIsMatchCache.clear();
     }
 
     /**
@@ -369,9 +360,6 @@ public class Channel implements Serializable {
      */
     /*package*/ final void setDj(String dj) {
         this.mDj = dj;
-
-        // isMatch結果を保持するキャッシュを削除
-        mIsMatchCache.clear();
     }
 
     /**
@@ -584,98 +572,60 @@ public class Channel implements Serializable {
     }
 
     /**
-     * isMatchの検索結果をキャッシュしておくためのマップ メモリが足りない場合や、Channel内の情報を書き換えた場合にはnullになる。
-     */
-    private transient SoftReference<HashMap<String, Boolean>> mIsMatchCache = new SoftReference<HashMap<String, Boolean>>(
-            new HashMap<String, Boolean>());
-
-    /**
      * この番組がフィルタリング単語に合致するかを取得する
      * 
-     * @param searchWord フィルタリング単語。 ここで指定した文字列をスペースに分かち書きしたそれぞれの文字列に対して、
-     *            すべてに合致する番組のみtrueを返す（AND検索）。
+     * @param searchWord フィルタリング単語。
      *            フィルタリング単語を指定しない場合は空も時価かnullを指定すること。
      * @return trueの場合はフィルタリング単語に合致する番組である。それ以外はfalse。
      */
-    /*package*/ boolean isMatch(String searchWord) {
+    /*package*/ boolean isMatch(String[] searchWords) {
         // フィルタリング単語が指定されていない場合は無条件に合致する
-        if (searchWord == null || searchWord.length() == 0) {
+        if (searchWords == null || searchWords.length == 0) {
             return true;
         }
 
-        // キャッシュに検索結果があればそれを参照する
-        {
-            HashMap<String, Boolean> isMatchCacheRef = mIsMatchCache.get();
-            if (isMatchCacheRef != null) {
-                Boolean r = isMatchCacheRef.get(searchWord);
-                if (r != null) {
-                    return r.booleanValue();
-                }
+        /*
+         * 検索単語を辞書に登録する
+         * 辞書は Key:検索単語 Value:マッチしたか
+         */
+        HashMap<String, Boolean> searchMap = new HashMap<String, Boolean>(searchWords.length);
+        for (String searchWord : searchWords) {
+            if (searchWord != null && searchWord.length() != 0) {
+                searchMap.put(searchWord, Boolean.FALSE);
             }
         }
-
-        // 文字列を空白文字で分割する
-        String[] words = searchWord.split(" |\\t|　");
-
-        boolean result = false;
-
+        
+        // 検索対象文字列を配列にする
+        ArrayList<String> searchedWords = new ArrayList<String>(4);
         if (mNam != null && mNam.length() != 0) {
-            boolean misMatch = false;
-            for (String word : words) {
-                if (mNam.toLowerCase().indexOf(word.toLowerCase()) == -1) {
-                    misMatch = true;
-                    break;
+            searchedWords.add(mNam);
+        }
+        if (mGnl != null && mGnl.length() != 0) {
+            searchedWords.add(mGnl);
+        }
+        if (mDesc != null && mDesc.length() != 0) {
+            searchedWords.add(mDesc);
+        }
+        if (mDj != null && mDj.length() != 0) {
+            searchedWords.add(mDj);
+        }
+
+        // 検索文字と検索対象文字を比較する
+        for (String searchedWord : searchedWords) {
+            for (String searchWord : searchMap.keySet()) {
+                // 見つかった場合は検索辞書の該当単語にYESを代入
+                if (searchedWord.toLowerCase().indexOf(searchWord.toLowerCase()) >= 0) {
+                    searchMap.put(searchWord, Boolean.TRUE);
                 }
             }
-            result = !misMatch;
         }
 
-        if (result == false && mGnl != null && mGnl.length() != 0) {
-            boolean misMatch = false;
-            for (String word : words) {
-                if (mGnl.toLowerCase().indexOf(word.toLowerCase()) == -1) {
-                    misMatch = true;
-                    break;
-                }
-            }
-            result = !misMatch;
-        }
-
-        if (result == false && mDesc != null && mDesc.length() != 0) {
-            boolean misMatch = false;
-            for (String word : words) {
-                if (mDesc.toLowerCase().indexOf(word.toLowerCase()) == -1) {
-                    misMatch = true;
-                    break;
-                }
-            }
-            result = !misMatch;
-        }
-
-        if (result == false && mDj != null && mDj.length() != 0) {
-            boolean misMatch = false;
-            for (String word : words) {
-                if (mDj.toLowerCase().indexOf(word.toLowerCase()) == -1) {
-                    misMatch = true;
-                    break;
-                }
-            }
-            result = !misMatch;
-        }
-
-        // キャッシュに検索結果を保存する
-        {
-            if (mIsMatchCache == null || mIsMatchCache.get() == null) {
-                mIsMatchCache = new SoftReference<HashMap<String, Boolean>>(
-                        new HashMap<String, Boolean>());
-            }
-
-            HashMap<String, Boolean> isMatchCacheRef = mIsMatchCache.get();
-            if (isMatchCacheRef != null) {
-                isMatchCacheRef.put(searchWord, new Boolean(result));
+        // すべての検索単語がマッチした場合にのみYESを返す
+        for (Boolean match : searchMap.values()) {
+            if (match.equals(Boolean.FALSE)) {
+                return false;
             }
         }
-
-        return result;
+        return true;
     }
 }
