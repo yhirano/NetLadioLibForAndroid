@@ -26,6 +26,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.ref.SoftReference;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -34,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -77,6 +79,14 @@ public class Headline {
      */
     private ArrayList<Channel> mChannelList = new ArrayList<Channel>();
 
+    /**
+     * 番組リストのキャッシュ
+     * 
+     * ソートやフィルタリングの結果をキャッシュしておく
+     */
+    private HashMap<String, SoftReference<Channel[]>> mChannelListCache = 
+            new HashMap<String, SoftReference<Channel[]>>();
+    
     /**
      * コンストラクタ
      * 
@@ -147,9 +157,6 @@ public class Headline {
      */
     public void fetchHeadline() throws IOException {
         synchronized (this) {
-            // 保持している番組をいったんクリアする
-            mChannelList.clear();
-
             HttpURLConnection httpConnection = null;
             InputStream st = null;
             InputStreamReader sr = null;
@@ -164,6 +171,11 @@ public class Headline {
                 st = httpConnection.getInputStream();
                 sr = new InputStreamReader(st, "Shift_JIS");
                 br = new BufferedReader(sr);
+
+                // 保持している番組をいったんクリアする
+                mChannelList.clear();
+                // キャッシュをクリアする
+                mChannelListCache.clear();
 
                 Channel channel = null;
 
@@ -473,7 +485,15 @@ public class Headline {
     public Channel[] getChannels(int sortType, String searchWord) {
         ArrayList<Channel> list = null;
 
+        String cacheKey = String.format("%d//%s", sortType, searchWord);
+
         synchronized (this) {
+            // キャッシュにある場合はキャッシュを返す
+            SoftReference<Channel[]> cached = mChannelListCache.get(cacheKey);
+            if (cached != null && cached.get() != null) {
+                return cached.get();
+            }
+            
             list = new ArrayList<Channel>(mChannelList);
         }
 
@@ -513,7 +533,14 @@ public class Headline {
                 break;
         }
 
-        return list.toArray(new Channel[list.size()]);
+        Channel[] result = list.toArray(new Channel[list.size()]);
+        
+        synchronized (this) {
+            // キャッシュに格納
+            mChannelListCache.put(cacheKey, new SoftReference<Channel[]>(result));
+        }
+        
+        return result;
     }
 
     /**
