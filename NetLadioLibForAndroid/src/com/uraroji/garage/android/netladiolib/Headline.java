@@ -98,8 +98,7 @@ public class Headline {
 
         synchronized (this) {
             for (Channel c : mChannelList) {
-                if (c.getPlayUrl() != null
-                        && c.getPlayUrl().toString().equals(playUrl)) {
+                if (c.getPlayUrl() != null && c.getPlayUrl().toString().equals(playUrl)) {
                     return c;
                 }
             }
@@ -174,14 +173,12 @@ public class Headline {
                     Matcher surlMatcher = surlPattern.matcher(line);
                     if (surlMatcher.matches()) {
                         try {
-                            if (surlMatcher.groupCount() >= 1
-                                    && surlMatcher.group(1).length() != 0) {
+                            if (surlMatcher.groupCount() >= 1 && surlMatcher.group(1).length() != 0) {
                                 if (channel == null) {
                                     channel = new Channel();
                                 }
                                 channel.setSurl(surlMatcher.group(1));
                             }
-
                             continue;
                         } catch (MalformedURLException e) {
                             ;
@@ -191,14 +188,12 @@ public class Headline {
                     Matcher timsMatcher = timsPattern.matcher(line);
                     if (timsMatcher.matches()) {
                         try {
-                            if (timsMatcher.groupCount() >= 1
-                                    && timsMatcher.group(1).length() != 0) {
+                            if (timsMatcher.groupCount() >= 1 && timsMatcher.group(1).length() != 0) {
                                 if (channel == null) {
                                     channel = new Channel();
                                 }
                                 channel.setTims(timsMatcher.group(1));
                             }
-
                             continue;
                         } catch (ParseException e) {
                             ;
@@ -207,29 +202,24 @@ public class Headline {
 
                     Matcher srvMatcher = srvPattern.matcher(line);
                     if (srvMatcher.matches()) {
-                        if (srvMatcher.groupCount() >= 1
-                                && srvMatcher.group(1).length() != 0) {
+                        if (srvMatcher.groupCount() >= 1 && srvMatcher.group(1).length() != 0) {
                             if (channel == null) {
                                 channel = new Channel();
                             }
                             channel.setSrv(srvMatcher.group(1));
                         }
-
                         continue;
                     }
 
                     Matcher prtMatcher = prtPattern.matcher(line);
                     if (prtMatcher.matches()) {
                         try {
-                            if (prtMatcher.groupCount() >= 1
-                                    && prtMatcher.group(1).length() != 0) {
+                            if (prtMatcher.groupCount() >= 1 && prtMatcher.group(1).length() != 0) {
                                 if (channel == null) {
                                     channel = new Channel();
                                 }
-                                channel.setPrt(Integer.valueOf(prtMatcher
-                                        .group(1)));
+                                channel.setPrt(Integer.valueOf(prtMatcher.group(1)));
                             }
-
                             continue;
                         } catch (NumberFormatException e) {
                             ;
@@ -238,106 +228,90 @@ public class Headline {
 
                     Matcher mntMatcher = mntPattern.matcher(line);
                     if (mntMatcher.matches()) {
-                        if (mntMatcher.groupCount() >= 1
-                                && mntMatcher.group(1).length() != 0) {
+                        if (mntMatcher.groupCount() >= 1 && mntMatcher.group(1).length() != 0) {
                             if (channel == null) {
                                 channel = new Channel();
                             }
                             channel.setMnt(mntMatcher.group(1));
                         }
-
                         continue;
                     }
 
                     Matcher typeMatcher = typePattern.matcher(line);
                     if (typeMatcher.matches()) {
-                        if (typeMatcher.groupCount() >= 1
-                                && typeMatcher.group(1).length() != 0) {
+                        if (typeMatcher.groupCount() >= 1 && typeMatcher.group(1).length() != 0) {
                             if (channel == null) {
                                 channel = new Channel();
                             }
                             channel.setType(typeMatcher.group(1));
                         }
-
                         continue;
                     }
 
                     Matcher namMatcher = namPattern.matcher(line);
                     if (namMatcher.matches()) {
-                        if (namMatcher.groupCount() >= 1
-                                && namMatcher.group(1).length() != 0) {
+                        if (namMatcher.groupCount() >= 1 && namMatcher.group(1).length() != 0) {
                             if (channel == null) {
                                 channel = new Channel();
                             }
                             channel.setNam(namMatcher.group(1));
                         }
-
                         continue;
                     }
 
                     Matcher gnlMatcher = gnlPattern.matcher(line);
                     if (gnlMatcher.matches()) {
-                        if (gnlMatcher.groupCount() >= 1
-                                && gnlMatcher.group(1).length() != 0) {
+                        if (gnlMatcher.groupCount() >= 1 && gnlMatcher.group(1).length() != 0) {
                             if (channel == null) {
                                 channel = new Channel();
                             }
                             channel.setGnl(gnlMatcher.group(1));
                         }
-
                         continue;
                     }
 
                     Matcher descMatcher = descPattern.matcher(line);
                     if (descMatcher.matches()) {
-                        if (descMatcher.groupCount() >= 1
-                                && descMatcher.group(1).length() != 0) {
+                        if (descMatcher.groupCount() >= 1 && descMatcher.group(1).length() != 0) {
                             if (channel == null) {
                                 channel = new Channel();
                             }
                             channel.setDesc(descMatcher.group(1));
                         }
-
                         continue;
                     }
 
                     Matcher djMatcher = djPattern.matcher(line);
                     if (djMatcher.matches()) {
-                        if (djMatcher.groupCount() >= 1
-                                && djMatcher.group(1).length() != 0) {
+                        if (djMatcher.groupCount() >= 1 && djMatcher.group(1).length() != 0) {
                             if (channel == null) {
                                 channel = new Channel();
                             }
                             channel.setDj(djMatcher.group(1));
                         }
-
                         continue;
                     }
 
                     Matcher songMatcher = songPattern.matcher(line);
                     if (songMatcher.matches()) {
-                        if (songMatcher.groupCount() >= 1
-                                && songMatcher.group(1).length() != 0) {
+                        if (songMatcher.groupCount() >= 1 && songMatcher.group(1).length() != 0) {
                             if (channel == null) {
                                 channel = new Channel();
                             }
                             channel.setSong(songMatcher.group(1));
                         }
-
                         continue;
                     }
 
                     Matcher urlMatcher = urlPattern.matcher(line);
                     if (urlMatcher.matches()) {
                         try {
-                            if (urlMatcher.groupCount() >= 1
-                                    && urlMatcher.group(1).length() != 0) {
+                            if (urlMatcher.groupCount() >= 1 && urlMatcher.group(1).length() != 0) {
                                 if (channel == null) {
                                     channel = new Channel();
                                 }
                                 channel.setUrl(urlMatcher.group(1));
                             }
-
                             continue;
                         } catch (MalformedURLException e) {
                             ;
@@ -347,15 +321,12 @@ public class Headline {
                     Matcher clnMatcher = clnPattern.matcher(line);
                     if (clnMatcher.matches()) {
                         try {
-                            if (clnMatcher.groupCount() >= 1
-                                    && clnMatcher.group(1).length() != 0) {
+                            if (clnMatcher.groupCount() >= 1 && clnMatcher.group(1).length() != 0) {
                                 if (channel == null) {
                                     channel = new Channel();
                                 }
-                                channel.setCln(Integer.valueOf(clnMatcher
-                                        .group(1)));
+                                channel.setCln(Integer.valueOf(clnMatcher.group(1)));
                             }
-
                             continue;
                         } catch (NumberFormatException e) {
                             ;
@@ -365,15 +336,12 @@ public class Headline {
                     Matcher clnsMatcher = clnsPattern.matcher(line);
                     if (clnsMatcher.matches()) {
                         try {
-                            if (clnsMatcher.groupCount() >= 1
-                                    && clnsMatcher.group(1).length() != 0) {
+                            if (clnsMatcher.groupCount() >= 1 && clnsMatcher.group(1).length() != 0) {
                                 if (channel == null) {
                                     channel = new Channel();
                                 }
-                                channel.setClns(Integer.valueOf(clnsMatcher
-                                        .group(1)));
+                                channel.setClns(Integer.valueOf(clnsMatcher.group(1)));
                             }
-
                             continue;
                         } catch (NumberFormatException e) {
                             ;
@@ -383,15 +351,12 @@ public class Headline {
                     Matcher maxMatcher = maxPattern.matcher(line);
                     if (maxMatcher.matches()) {
                         try {
-                            if (maxMatcher.groupCount() >= 1
-                                    && maxMatcher.group(1).length() != 0) {
+                            if (maxMatcher.groupCount() >= 1 && maxMatcher.group(1).length() != 0) {
                                 if (channel == null) {
                                     channel = new Channel();
                                 }
-                                channel.setMax(Integer.valueOf(maxMatcher
-                                        .group(1)));
+                                channel.setMax(Integer.valueOf(maxMatcher.group(1)));
                             }
-
                             continue;
                         } catch (NumberFormatException e) {
                             ;
@@ -401,15 +366,12 @@ public class Headline {
                     Matcher bitMatcher = bitPattern.matcher(line);
                     if (bitMatcher.matches()) {
                         try {
-                            if (bitMatcher.groupCount() >= 1
-                                    && bitMatcher.group(1).length() != 0) {
+                            if (bitMatcher.groupCount() >= 1 && bitMatcher.group(1).length() != 0) {
                                 if (channel == null) {
                                     channel = new Channel();
                                 }
-                                channel.setBit(Integer.valueOf(bitMatcher
-                                        .group(1)));
+                                channel.setBit(Integer.valueOf(bitMatcher.group(1)));
                             }
-
                             continue;
                         } catch (NumberFormatException e) {
                             ;
@@ -419,15 +381,12 @@ public class Headline {
                     Matcher smplMatcher = smplPattern.matcher(line);
                     if (smplMatcher.matches()) {
                         try {
-                            if (smplMatcher.groupCount() >= 1
-                                    && smplMatcher.group(1).length() != 0) {
+                            if (smplMatcher.groupCount() >= 1 && smplMatcher.group(1).length() != 0) {
                                 if (channel == null) {
                                     channel = new Channel();
                                 }
-                                channel.setSmpl(Integer.valueOf(smplMatcher
-                                        .group(1)));
+                                channel.setSmpl(Integer.valueOf(smplMatcher.group(1)));
                             }
-
                             continue;
                         } catch (NumberFormatException e) {
                             ;
@@ -437,15 +396,12 @@ public class Headline {
                     Matcher chsMatcher = chsPattern.matcher(line);
                     if (chsMatcher.matches()) {
                         try {
-                            if (chsMatcher.groupCount() >= 1
-                                    && chsMatcher.group(1).length() != 0) {
+                            if (chsMatcher.groupCount() >= 1 && chsMatcher.group(1).length() != 0) {
                                 if (channel == null) {
                                     channel = new Channel();
                                 }
-                                channel.setChs(Integer.valueOf(chsMatcher
-                                        .group(1)));
+                                channel.setChs(Integer.valueOf(chsMatcher.group(1)));
                             }
-
                             continue;
                         } catch (NumberFormatException e) {
                             ;
@@ -569,13 +525,10 @@ public class Headline {
         }
     }
 
-    private static final ChannelComparator channelComparatorListeners = new ChannelComparator(
-            SORT_TYPE_LISTENERS);
-    private static final ChannelComparator channelComparatorTitle = new ChannelComparator(
-            SORT_TYPE_TITLE);
+    private static final ChannelComparator channelComparatorListeners = new ChannelComparator(SORT_TYPE_LISTENERS);
+    private static final ChannelComparator channelComparatorTitle = new ChannelComparator(SORT_TYPE_TITLE);
     private static final ChannelComparator channelComparatorDj = new ChannelComparator(SORT_TYPE_DJ);
-    private static final ChannelComparator channelComparatorNewly = new ChannelComparator(
-            SORT_TYPE_NEWLY);
+    private static final ChannelComparator channelComparatorNewly = new ChannelComparator(SORT_TYPE_NEWLY);
 
     /**
      * 番組の比較

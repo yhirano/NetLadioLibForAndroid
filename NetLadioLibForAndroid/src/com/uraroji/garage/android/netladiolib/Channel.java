@@ -156,13 +156,10 @@ public class Channel implements Serializable {
 
     @Override
     public String toString() {
-        return "Channel [mSurl=" + mSurl + ", mTims=" + mTims + ", mSrv="
-                + mSrv + ", mPrt=" + mPrt + ", mMnt=" + mMnt + ", mType="
-                + mType + ", mNam=" + mNam + ", mGnl=" + mGnl + ", mDesc="
-                + mDesc + ", mDj=" + mDj + ", mSong=" + mSong + ", mUrl="
-                + mUrl + ", mCln=" + mCln + ", mClns=" + mClns + ", mMax="
-                + mMax + ", mBit=" + mBit + ", mSmpl=" + mSmpl + ", mChs="
-                + mChs + "]";
+        return "Channel [mSurl=" + mSurl + ", mTims=" + mTims + ", mSrv=" + mSrv + ", mPrt=" + mPrt + ", mMnt=" + mMnt
+                + ", mType=" + mType + ", mNam=" + mNam + ", mGnl=" + mGnl + ", mDesc=" + mDesc + ", mDj=" + mDj
+                + ", mSong=" + mSong + ", mUrl=" + mUrl + ", mCln=" + mCln + ", mClns=" + mClns + ", mMax=" + mMax
+                + ", mBit=" + mBit + ", mSmpl=" + mSmpl + ", mChs=" + mChs + "]";
     }
 
     /**
@@ -205,8 +202,7 @@ public class Channel implements Serializable {
     /**
      * サーバから取得される放送開始時刻の形式
      */
-    private transient final static SimpleDateFormat OUTPUT_SDF = new SimpleDateFormat(
-            "yyyy/MM/dd HH:mm:ss");
+    private transient final static SimpleDateFormat OUTPUT_SDF = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
     /**
      * 放送開始時刻を文字列で取得する
@@ -232,8 +228,7 @@ public class Channel implements Serializable {
     /**
      * サーバから取得される放送開始時刻の形式
      */
-    private transient final static SimpleDateFormat INPUT_SDF = new SimpleDateFormat(
-            "yy/MM/dd HH:mm:ss");
+    private transient final static SimpleDateFormat INPUT_SDF = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
 
     /**
      * 放送開始時刻を文字列で設定する "yy/MM/dd HH:mm:ss"の形式で設定する必要がある

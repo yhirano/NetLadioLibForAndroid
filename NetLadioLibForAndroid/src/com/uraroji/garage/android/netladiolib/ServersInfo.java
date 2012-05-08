@@ -189,9 +189,7 @@ public class ServersInfo {
         synchronized (this) {
             for (Server s : mServerList) {
                 if (s != null && s.isConnectable()) {
-                    if (result == null
-                            || result.getCongestionDegree() > s
-                                    .getCongestionDegree()) {
+                    if (result == null || result.getCongestionDegree() > s.getCongestionDegree()) {
                         result = s;
                     }
                 }
@@ -204,11 +202,12 @@ public class ServersInfo {
     /**
      * サーバから取得される時刻の形式
      */
-    private final static SimpleDateFormat SDF = new SimpleDateFormat(
-            "yyyy-MM-dd HH:mm:ss");
+    private final static SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     /**
-     * サーバの一覧をインターネットから取得する インターネットからねとらじサーバ一覧を取得し、 ServerInfoクラスが保持する番組を更新する
+     * サーバの一覧をインターネットから取得する
+     * 
+     * インターネットからねとらじサーバ一覧を取得し、 ServerInfoクラスが保持する番組を更新する
      * 
      * @throws IOException 接続に失敗したと思われる場合
      */

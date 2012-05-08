@@ -80,9 +80,8 @@ public class Server {
 
     @Override
     public String toString() {
-        return "Server [mServerName=" + mServerName + ", mCongestionDegree="
-                + mCongestionDegree + ", mSource=" + mSource + ", mClient="
-                + mClient + ", mTransfer=" + mTransfer + "]";
+        return "Server [mServerName=" + mServerName + ", mCongestionDegree=" + mCongestionDegree 
+                + ", mSource=" + mSource + ", mClient=" + mClient + ", mTransfer=" + mTransfer + "]";
     }
 
     /**
